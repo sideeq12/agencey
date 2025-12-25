@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import { MetadataRoute } from 'next';
 import webflowPages from '@/data/webflow/pages.json';
 import wordpressPages from '@/data/wordpress/pages.json';

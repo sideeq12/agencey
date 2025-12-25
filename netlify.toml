@@ -2,5 +2,7 @@
   command = "npm run build"
   publish = ".next"
 
-# Plugin managed via Netlify UI or added when a compatible version is known.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
   package = "@netlify/plugin-nextjs"
