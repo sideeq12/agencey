@@ -5,13 +5,14 @@ import { LeadForm } from "@/components/forms/LeadForm";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { FiShare2, FiCheckCircle } from "react-icons/fi";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function SocialMediaPage() {
     return (
         <div className="min-h-screen bg-black text-white px-6">
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent opacity-30 pointer-events-none" />
+                <HeroBackground backgroundImage="/team4.jpg" />
                 <div className="max-w-6xl mx-auto w-full relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -21,7 +22,7 @@ export default function SocialMediaPage() {
                         <div className="inline-block p-4 rounded-3xl bg-purple-500/10 border border-purple-500/20 mb-10">
                             <FiShare2 className="text-4xl text-purple-500" />
                         </div>
-                        <h1 className="text-5xl md:text-[8rem] font-black italic tracking-tighter leading-[0.8] uppercase mb-12 text-center">
+                        <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase mb-12 text-center">
                             Social Media That Generates<br />Leads — Not Just Likes.
                         </h1>
                         <p className="text-xl md:text-3xl text-zinc-400 max-w-4xl mx-auto font-medium leading-relaxed mb-16 text-center">
@@ -29,8 +30,8 @@ export default function SocialMediaPage() {
                         </p>
                         <div className="flex justify-center mb-20">
                             <Link href="#strategy">
-                                <Button size="lg" className="h-16 px-10 text-lg font-bold group">
-                                    <span className="group-hover:translate-x-1 transition-transform inline-block">👉 Get More Leads from Social Media</span>
+                                <Button size="lg" className="h-16 px-10 text-lg font-bold mb-20 group">
+                                    <span className="group-hover:translate-x-1 transition-transform inline-block">Start Generating Leads</span>
                                 </Button>
                             </Link>
                         </div>
@@ -66,7 +67,7 @@ export default function SocialMediaPage() {
                                     viewport={{ once: true }}
                                 >
                                     <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter mb-6 uppercase leading-[0.9]">
-                                        Let&apos;s Find Why Your<br />Website Isn&apos;t Converting.
+                                        Turn Clicks Into<br />Customers.
                                     </h2>
                                     <p className="text-zinc-400 leading-relaxed font-medium">
                                         Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.

@@ -6,13 +6,16 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { FiCode, FiCheckCircle } from "react-icons/fi";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { ComponentType } from "react";
+import { Accordion } from "@/components/ui/Accordion";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function WordPressHub() {
     return (
         <div className="min-h-screen bg-black text-white px-6">
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden text-center">
-                <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent opacity-30 pointer-events-none" />
+                <HeroBackground backgroundImage="/team3.jpg" />
                 <div className="max-w-6xl mx-auto w-full relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -22,7 +25,7 @@ export default function WordPressHub() {
                         <div className="inline-block p-4 rounded-3xl bg-purple-500/10 border border-purple-500/20 mb-10 text-purple-500">
                             <FiCode className="text-4xl" />
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter leading-[0.8] uppercase mb-12">
+                        <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase mb-12">
                             Flexible WordPress Websites<br />Built for Long-Term Growth.
                         </h1>
                         <p className="text-xl md:text-3xl text-zinc-400 max-w-4xl mx-auto font-medium leading-relaxed mb-16">
@@ -30,7 +33,7 @@ export default function WordPressHub() {
                         </p>
                         <Link href="#strategy">
                             <Button size="lg" className="h-16 px-10 text-lg font-bold mb-20 group">
-                                <span className="group-hover:translate-x-1 transition-transform inline-block">👉 Start My WordPress Project</span>
+                                <span className="group-hover:translate-x-1 transition-transform inline-block">Redesign My Website</span>
                             </Button>
                         </Link>
                     </motion.div>
@@ -42,7 +45,7 @@ export default function WordPressHub() {
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-500 text-center mb-16">Enterprise WordPress Calibration</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {pages.map((page, i) => (
+                        {pages.slice(0, 9).map((page, i) => (
                             <Link
                                 key={page.slug}
                                 href={`/wordpress/${page.slug}`}
@@ -62,6 +65,49 @@ export default function WordPressHub() {
                 </div>
             </section>
 
+
+            {/* FAQ Section */}
+            <section className="py-24 border-t border-zinc-900 bg-zinc-950">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
+                    <p className="text-zinc-400 text-center mb-12">Everything you need to know about our WordPress services</p>
+                    <Accordion items={[
+                        {
+                            question: "Is WordPress the right choice for my business?",
+                            answer: "WordPress is ideal if you need a flexible, content-rich website with extensive plugin support and customization options. It works best for blogs, news sites, corporate websites, and businesses that need regular content updates. If you require a simpler, maintenance-free solution, we'll assess whether WordPress or another platform fits better."
+                        },
+                        {
+                            question: "What does your WordPress website building process look like?",
+                            answer: "We start with understanding your content strategy, audience, and business goals. Then we select the right theme and plugins, customize the design, and build a scalable architecture. Before launch, we optimize for speed, security, and SEO, and ensure your team can manage content easily."
+                        },
+                        {
+                            question: "How long does it take to build a WordPress website?",
+                            answer: "Most WordPress projects take 3–5 weeks, depending on customization level and content volume. Simple blog setups can be completed faster, while complex custom-designed sites with advanced functionality may take longer. We provide a clear timeline before starting."
+                        },
+                        {
+                            question: "How much does a WordPress website cost?",
+                            answer: "Pricing depends on design complexity, number of pages, custom features, and plugin requirements. Basic WordPress sites start lower, while fully custom-designed, enterprise-level builds cost more. We provide transparent pricing based on your specific needs."
+                        },
+                        {
+                            question: "Will my WordPress site be SEO-friendly?",
+                            answer: "Yes. We build WordPress sites with clean code, fast loading times, and proper SEO plugins configured from day one. We optimize meta tags, schema markup, and site structure to ensure strong search engine visibility."
+                        },
+                        {
+                            question: "Can I update the website myself after launch?",
+                            answer: "Absolutely. WordPress has an intuitive editor that allows you to update text, images, and posts without technical knowledge. We provide training and documentation so you can manage your content independently."
+                        },
+                        {
+                            question: "Do you offer redesigns or only new WordPress builds?",
+                            answer: "We handle both. If your existing WordPress site is outdated, slow, or difficult to manage, we can redesign and optimize it while preserving your content and SEO rankings — keeping what works and improving what doesn't."
+                        },
+                        {
+                            question: "How does WordPress compare to Webflow or Shopify?",
+                            answer: "WordPress offers the most plugin flexibility and is best for content-heavy sites with frequent updates. Webflow provides more design control with less maintenance, while Shopify is purpose-built for e-commerce. We recommend platforms based on your specific goals."
+                        }
+                    ]} />
+                </div>
+            </section>
+
             {/* Strategy Section */}
             <section id="strategy" className="py-40 border-t border-zinc-900 bg-black">
                 <div className="max-w-7xl mx-auto">
@@ -74,7 +120,7 @@ export default function WordPressHub() {
                                     viewport={{ once: true }}
                                 >
                                     <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter mb-6 uppercase leading-[0.9]">
-                                        Let&apos;s Find Why Your<br />Website Isn&apos;t Converting.
+                                        Fix My Website<br />Performance.
                                     </h2>
                                     <p className="text-zinc-400 leading-relaxed font-medium">
                                         Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.

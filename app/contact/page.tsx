@@ -5,13 +5,14 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiArrowLeft } from "react-icons/fi";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function ContactPage() {
     return (
         <div className="min-h-screen bg-black text-white">
             {/* Hero Section */}
             <section className="relative h-[80vh] flex items-center justify-center pt-32 px-6 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/20 to-black pointer-events-none" />
+                <HeroBackground backgroundImage="/team5.jpg" />
                 <div className="max-w-6xl mx-auto w-full relative z-10 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -25,7 +26,7 @@ export default function ContactPage() {
                                 </Button>
                             </Link>
                         </nav>
-                        <h1 className="text-6xl md:text-9xl font-black italic tracking-tighter leading-[0.85] uppercase">
+                        <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase">
                             The Strategy<br />Hub.
                         </h1>
                         <p className="text-xl md:text-2xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">

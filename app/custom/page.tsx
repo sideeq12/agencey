@@ -6,13 +6,16 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { FiZap, FiCheckCircle } from "react-icons/fi";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { ComponentType } from "react";
+import { Accordion } from "@/components/ui/Accordion";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function CustomHub() {
     return (
         <div className="min-h-screen bg-black text-white px-6">
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden text-center">
-                <div className="absolute inset-0 bg-gradient-to-b from-orange-500/10 to-transparent opacity-30 pointer-events-none" />
+                <HeroBackground backgroundImage="/team5.jpg" />
                 <div className="max-w-6xl mx-auto w-full relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -22,7 +25,7 @@ export default function CustomHub() {
                         <div className="inline-block p-4 rounded-3xl bg-orange-500/10 border border-orange-500/20 mb-10 text-orange-500">
                             <FiZap className="text-4xl" />
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter leading-[0.8] uppercase mb-12">
+                        <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase mb-12">
                             Custom Websites Built<br />Around Your Business Goals.
                         </h1>
                         <p className="text-xl md:text-3xl text-zinc-400 max-w-4xl mx-auto font-medium leading-relaxed mb-16">
@@ -30,7 +33,7 @@ export default function CustomHub() {
                         </p>
                         <Link href="#strategy">
                             <Button size="lg" className="h-16 px-10 text-lg font-bold mb-20 group">
-                                <span className="group-hover:translate-x-1 transition-transform inline-block">👉 Discuss a Custom Build</span>
+                                <span className="group-hover:translate-x-1 transition-transform inline-block">Turn My Idea Into Reality</span>
                             </Button>
                         </Link>
                     </motion.div>
@@ -42,7 +45,7 @@ export default function CustomHub() {
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-500 text-center mb-16">Bespoke Full-Stack Engineering</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {pages.map((page, i) => (
+                        {pages.slice(0, 9).map((page, i) => (
                             <Link
                                 key={page.slug}
                                 href={`/custom/${page.slug}`}
@@ -62,6 +65,49 @@ export default function CustomHub() {
                 </div>
             </section>
 
+
+            {/* FAQ Section */}
+            <section className="py-24 border-t border-zinc-900 bg-zinc-950">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
+                    <p className="text-zinc-400 text-center mb-12">Everything you need to know about our custom engineering services</p>
+                    <Accordion items={[
+                        {
+                            question: "Is a custom website the right choice for my business?",
+                            answer: "Custom development is the choice for businesses that have outgrown standard platforms or need unique functionality that plugins can't provide. It's ideal for enterprise SaaS, complex marketplaces, or brands that require absolute control over performance, security, and the user experience."
+                        },
+                        {
+                            question: "What does your custom development process look like?",
+                            answer: "We follow a modular engineering approach: Technical Discovery, System Architecture, UI/UX Prototyping, and Agile Development Sprints. We use modern stacks like Next.js, TypeScript, and Tailwind CSS to build robust, maintainable platforms."
+                        },
+                        {
+                            question: "How long does it take to build a custom website?",
+                            answer: "Custom builds usually range from 8 to 16 weeks depending on the complexity of the backend logic and integration requirements. We provide a detailed technical roadmap and release internal milestones every two weeks."
+                        },
+                        {
+                            question: "How much does a custom website cost?",
+                            answer: "Custom engineering is an investment in your business infrastructure. Pricing depends on the complexity of features, integrations, and performance requirements. We provide transparent, value-based pricing that reflects the long-term scalability of your platform."
+                        },
+                        {
+                            question: "Will my custom site be SEO-friendly?",
+                            answer: "Yes. By building from scratch, we have total control over the DOM structure, server-side rendering (SSR), and edge-caching. Custom sites often outperform platform-based sites in Core Web Vitals and organic rankings due to zero code bloat."
+                        },
+                        {
+                            question: "Can I update the website myself after launch?",
+                            answer: "Absolutely. We typically integrate a Headless CMS (like Sanity, Contentful, or Strapi) that allows your team to manage content effortlessly while keeping the frontend performant and secure. You get platform ease-of-use with custom power."
+                        },
+                        {
+                            question: "Do you offer maintenance and support after launch?",
+                            answer: "Yes. We provide ongoing support agreements that cover security patches, performance monitoring, and iterative feature development. We don't just launch and leave; we partner with you for the long term."
+                        },
+                        {
+                            question: "How does custom development compare to Webflow, WordPress, or Shopify?",
+                            answer: "Custom dev offers 'infinite' flexibility compared to platform constraints. While it requires a higher initial investment, it removes the ceiling on what's possible and significantly reduces long-term technical debt for large-scale operations."
+                        }
+                    ]} />
+                </div>
+            </section>
+
             {/* Strategy Section */}
             <section id="strategy" className="py-40 border-t border-zinc-900 bg-black">
                 <div className="max-w-7xl mx-auto">
@@ -74,7 +120,7 @@ export default function CustomHub() {
                                     viewport={{ once: true }}
                                 >
                                     <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter mb-6 uppercase leading-[0.9]">
-                                        Let&apos;s Find Why Your<br />Website Isn&apos;t Converting.
+                                        Let&apos;s Architect Your<br />Product.
                                     </h2>
                                     <p className="text-zinc-400 leading-relaxed font-medium">
                                         Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.

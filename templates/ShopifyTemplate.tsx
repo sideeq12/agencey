@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
+import { HeroBackground } from '@/components/ui/HeroBackground';
 
 interface ShopifyTemplateProps {
     data: {
@@ -38,12 +39,12 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             {/* Content starts below global Navbar */}
 
             <header className="relative pt-48 pb-24 px-6 overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-green-500/10 blur-[120px] rounded-full pointer-events-none" />
+                <HeroBackground backgroundImage="/team4.jpg" />
                 <div className="max-w-5xl mx-auto text-center relative z-10">
                     <div className="inline-block px-3 py-1 mb-8 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-[10px] font-bold uppercase tracking-[0.2em]">
                         Performance Shopify Solution
                     </div>
-                    <h1 className="text-7xl md:text-[8vw] font-black tracking-tighter mb-8 leading-[0.8] italic uppercase">
+                    <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic uppercase">
                         {data.title}
                     </h1>
                     <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
@@ -54,7 +55,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                             {data.cta}
                         </Button>
                         <a href="#roi" className="text-xs font-bold uppercase tracking-[0.3em] border-b border-zinc-800 pb-2 hover:text-green-500 transition-colors">
-                            View ROI Metrics
+                            See Real Results
                         </a>
                     </div>
                 </div>

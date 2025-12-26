@@ -116,7 +116,7 @@ export const Navbar = () => {
                     <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link>
                 </div>
                 <Link href="/contact">
-                    <Button size="sm" className="hidden md:block">Get Started</Button>
+                    <Button size="sm" className="hidden md:block">Start Your Project</Button>
                 </Link>
             </div>
         </nav>

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
+import { HeroBackground } from '@/components/ui/HeroBackground';
 
 interface WebflowTemplateProps {
     data: {
@@ -39,12 +40,12 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
 
             {/* Hero Section */}
             <header className="relative pt-48 pb-24 px-6 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 to-transparent pointer-events-none" />
+                <HeroBackground backgroundImage="/team2.jpg" />
                 <div className="max-w-5xl mx-auto text-center relative z-10">
                     <div className="inline-block px-3 py-1 mb-8 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold uppercase tracking-widest text-zinc-400">
                         Premium Webflow Development
                     </div>
-                    <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-8 leading-[0.85] italic">
+                    <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic">
                         {data.title}
                     </h1>
                     <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
@@ -52,7 +53,7 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                     </p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                         <Button size="lg" className="px-12">{data.cta}</Button>
-                        <Button variant="outline" size="lg">Explore Portfolio</Button>
+                        <Button variant="outline" size="lg">View Our Work</Button>
                     </div>
                 </div>
             </header>

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { FiLayout, FiMaximize, FiTarget, FiTrendingUp, FiZap, FiCheckCircle, FiShare2, FiSettings, FiShoppingCart, FiBox } from "react-icons/fi";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function ServicesPage() {
     const mainServices = [
@@ -56,7 +57,7 @@ export default function ServicesPage() {
         <div className="min-h-screen bg-black text-white px-6">
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden text-center">
-                <div className="absolute inset-0 bg-gradient-to-b from-zinc-500/10 to-transparent opacity-30 pointer-events-none" />
+                <HeroBackground />
                 <div className="max-w-6xl mx-auto w-full relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -66,7 +67,7 @@ export default function ServicesPage() {
                         <div className="inline-block p-4 rounded-3xl bg-zinc-900 border border-zinc-800 mb-10 text-zinc-400">
                             <FiLayout className="text-4xl" />
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter leading-[0.8] uppercase mb-12">
+                        <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase mb-12">
                             Everything You Need to<br />Attract, Convert, and Retain<br />Customers Online.
                         </h1>
                         <p className="text-xl md:text-3xl text-zinc-400 max-w-4xl mx-auto font-medium leading-relaxed mb-16">
@@ -74,7 +75,7 @@ export default function ServicesPage() {
                         </p>
                         <Link href="#contact">
                             <Button size="lg" className="h-16 px-10 text-lg font-bold group">
-                                <span className="group-hover:translate-x-1 transition-transform inline-block">👉 Get a Custom Growth Plan</span>
+                                <span className="group-hover:translate-x-1 transition-transform inline-block">Scale My Business Online</span>
                             </Button>
                         </Link>
                     </motion.div>
@@ -120,7 +121,7 @@ export default function ServicesPage() {
                                     viewport={{ once: true }}
                                 >
                                     <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter mb-6 uppercase leading-[0.9]">
-                                        Let&apos;s Build Your<br />Growth Engine.
+                                        Ready to Grow Your<br />Business?
                                     </h2>
                                     <p className="text-zinc-400 leading-relaxed font-medium">
                                         Ready to scale? Book a strategy session with our lead architects. We&apos;ll audit your current digital stack and provide a clear roadmap to dominance.

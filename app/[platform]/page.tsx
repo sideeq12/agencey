@@ -1,6 +1,7 @@
 import { platforms } from "@/data/pseo";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 interface PageProps {
     params: Promise<{
@@ -24,8 +25,9 @@ export default async function PlatformPage({ params }: PageProps) {
 
     return (
         <div className="flex min-h-screen flex-col items-center bg-black font-sans text-white">
-            <main className="flex w-full max-w-4xl flex-col items-center py-20 pt-32 px-6 sm:px-16">
-                <header className="mb-12 text-center sm:text-left w-full">
+            <main className="relative flex w-full max-w-4xl flex-col items-center py-20 pt-32 px-6 sm:px-16 overflow-hidden">
+                <HeroBackground backgroundImage="/team.jpg" className="!fixed h-screen" />
+                <header className="mb-12 text-center sm:text-left w-full relative z-10">
                     <div className="inline-block px-3 py-1 rounded-full bg-zinc-800 text-xs font-bold uppercase tracking-widest mb-4">
                         Platform Specialist
                     </div>
@@ -37,7 +39,9 @@ export default async function PlatformPage({ params }: PageProps) {
                     </p>
                 </header>
 
-                <section className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mb-16">
+
+
+                <section className="grid grid-cols-1 md:grid-cols-2 gap-12 w-full mb-16 relative z-10">
                     <div className="flex flex-col gap-6">
                         <h2 className="text-2xl font-semibold text-white">
                             Why Choose {platform.name}?
@@ -67,18 +71,20 @@ export default async function PlatformPage({ params }: PageProps) {
                     </div>
                 </section>
 
-                <section className="w-full bg-zinc-950 text-white p-12 rounded-3xl text-center flex flex-col items-center gap-8">
-                    <h2 className="text-3xl font-bold">Ready to build on {platform.name}?</h2>
+
+
+                <section className="w-full bg-zinc-950 text-white p-12 rounded-3xl text-center flex flex-col items-center gap-8 relative z-10">
+                    <h2 className="text-3xl font-bold">Let’s Build Something That Converts</h2>
                     <div className="flex flex-col sm:flex-row gap-4">
                         <button className="h-12 px-8 bg-white text-black rounded-full font-semibold hover:bg-zinc-200 transition-colors">
-                            Get a {platform.name} Quote
+                            Start Your Project
                         </button>
                         <button className="h-12 px-8 border border-zinc-700 rounded-full font-semibold hover:bg-zinc-800 transition-colors">
-                            See Sample Projects
+                            View Our Work
                         </button>
                     </div>
                 </section>
-            </main>
-        </div>
+            </main >
+        </div >
     );
 }

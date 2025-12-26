@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
+import { HeroBackground } from "@/components/ui/HeroBackground";
+import { Accordion } from "@/components/ui/Accordion";
 import Link from "next/link";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { useState } from "react";
@@ -18,17 +20,18 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-white">
       {/* 1. Hero Section */}
-      <header className="relative px-6 pt-32 pb-24 min-h-[80vh] flex items-center justify-center">
+      <header className="relative px-6 pt-32 pb-24 min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <HeroBackground />
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="max-w-6xl mx-auto text-center"
+          className="max-w-6xl mx-auto text-center relative z-10"
         >
           <div className="inline-block px-4 py-2 mb-8 rounded-full bg-zinc-900/50 border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-zinc-400">
             Strategic Growth Unit
           </div>
-          <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter mb-8 leading-[0.8] uppercase">
+          <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter mb-8 leading-[0.9] uppercase">
             Websites & Marketing Systems<br />That Bring You Qualified Leads.
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
@@ -36,7 +39,9 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link href="#contact">
-              <Button size="lg" className="px-10 h-16 text-lg font-bold">👉 Request a Free Strategy Session</Button>
+              <Button size="lg" className="h-16 px-10 text-lg font-bold mb-20 group">
+                <span className="group-hover:translate-x-1 transition-transform inline-block">Get a Free Strategy Session</span>
+              </Button>
             </Link>
             <Link href="#growth" className="text-zinc-500 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors">
               See How It Works
@@ -55,6 +60,11 @@ export default function Home() {
             <div className="text-xl font-bold">NEXUS</div>
             <div className="text-xl font-bold">VORTEX</div>
             <div className="text-xl font-bold">QUANTUM</div>
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="#contact" className="text-sm font-semibold text-zinc-500 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5">
+              See Why Clients Trust Us
+            </Link>
           </div>
         </div>
       </section>
@@ -110,6 +120,13 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="mt-16 text-center">
+            <Link href="#contact">
+              <Button variant="outline" size="lg" className="border-zinc-700 hover:bg-zinc-900 group">
+                Start Your Project <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -229,7 +246,12 @@ export default function Home() {
               <div className="w-10 h-10 bg-blue-500 rounded-full animate-pulse" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Unified Execution</h3>
-            <p className="text-zinc-400">Decoupled teams working in perfect harmony.</p>
+            <p className="text-zinc-400 mb-8">Decoupled teams working in perfect harmony.</p>
+            <Link href="#contact">
+              <Button className="w-full font-bold group">
+                Talk to a Web Expert <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -249,6 +271,11 @@ export default function Home() {
             </div>
           ))}
         </div>
+        <div className="mt-16 text-center">
+          <Link href="/webflow" className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors group">
+            View Our Work <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </div>
       </section>
 
       {/* 7. FAQ Section */}
@@ -256,16 +283,43 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">Frequently Asked Questions</h2>
           <div className="space-y-10">
-            {[
-              { q: "What is pSEO architecture?", a: "A decoupled engineering unit focused on a single technology stack to maximize performance and organic search dominance." },
-              { q: "How do you handle page updates?", a: "Our centralized data core allows us to push global changes to 1,000+ pages in seconds without a redeploy." },
-              { q: "Is this only for enterprise?", a: "While we cater to scale, any brand with diverse keyword intent can leverage our architecture to capture the long-tail." }
-            ].map((faq, i) => (
-              <div key={i} className="border-b border-zinc-800 pb-8">
-                <h3 className="text-xl font-bold mb-3">{faq.q}</h3>
-                <p className="text-zinc-400 leading-relaxed">{faq.a}</p>
-              </div>
-            ))}
+            <Accordion items={[
+              {
+                question: "What do you actually do?",
+                answer: "We design and build high-converting websites and marketing systems—Webflow, WordPress, Shopify, and custom builds—focused on traffic, leads, and sales, not just looks."
+              },
+              {
+                question: "Who is this for?",
+                answer: "Startups, agencies, and growing businesses that need a website or marketing system that actually drives revenue—not a pretty brochure."
+              },
+              {
+                question: "How are you different from other agencies?",
+                answer: "We don’t just “design.” We combine UX, performance, SEO, and conversion strategy so your website works as a growth engine from day one."
+              },
+              {
+                question: "How long does a typical project take?",
+                answer: "Most websites launch in 2–4 weeks, depending on scope. We move fast without cutting corners."
+              },
+              {
+                question: "Do you help after the site is live?",
+                answer: "Yes. We offer ongoing optimization, SEO, ads, and support to keep your site improving—not stagnating."
+              },
+              {
+                question: "Can you work with my existing website?",
+                answer: "Absolutely. We can redesign, optimize, or rebuild your current site to improve speed, SEO, and conversions."
+              },
+              {
+                question: "How much does it cost?",
+                answer: "Pricing depends on scope. We offer transparent quotes after a short strategy call—no hidden fees, no surprises."
+              }
+            ]} />
+            <div className="flex justify-center mt-12">
+              <Link href="#contact">
+                <Button size="lg" className="h-16 px-10 text-lg font-bold group">
+                  <span className="group-hover:translate-x-1 transition-transform inline-block">Get a Free Strategy Session</span>
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -277,7 +331,7 @@ export default function Home() {
             <div className="space-y-12">
               <div>
                 <h2 className="text-3xl md:text-5xl font-black italic tracking-tighter mb-8 uppercase leading-[0.9]">
-                  Let&apos;s Find Why Your<br />Website Isn&apos;t Converting.
+                  Ready to Grow Your<br />Business?
                 </h2>
                 <p className="text-lg text-zinc-400 max-w-md leading-relaxed">
                   Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.

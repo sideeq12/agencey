@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
+import { HeroBackground } from '@/components/ui/HeroBackground';
 
 interface CustomTemplateProps {
     data: {
@@ -39,13 +40,13 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
 
             {/* Hero */}
             <header className="pt-40 pb-20 px-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-blue-500/5 pointer-events-none" />
-                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <HeroBackground backgroundImage="/team5.jpg" />
+                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
                     <div className="space-y-8">
                         <div className="inline-block px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold uppercase tracking-widest text-zinc-400">
                             Custom Engineering Experts
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9]">
+                        <h1 className="text-3xl md:text-5xl font-black tracking-tighter leading-[0.9]">
                             {data.title}
                         </h1>
                         <p className="text-xl md:text-2xl text-zinc-400 max-w-xl leading-relaxed">
@@ -53,7 +54,7 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <Button size="lg">{data.cta}</Button>
-                            <Button variant="outline" size="lg">Technical Stack</Button>
+                            <Button variant="outline" size="lg">Explore Our Services</Button>
                         </div>
                     </div>
                     <ImagePlaceholder text="Engineering Excellence" aspect="video" className="shadow-[0_0_100px_rgba(168,85,247,0.1)] rounded-[40px]" />

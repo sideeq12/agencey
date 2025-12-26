@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
+import { HeroBackground } from '@/components/ui/HeroBackground';
 
 interface WordPressTemplateProps {
     data: {
@@ -35,8 +36,9 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
             <SeoHead title={data.title} description={data.description} />
             <JsonLd data={schema} />
 
-            <header className="pt-20 pb-12 px-6">
-                <div className="max-w-5xl mx-auto bg-white dark:bg-zinc-900 rounded-[40px] p-12 md:p-20 shadow-xl border border-zinc-100 dark:border-zinc-800">
+            <header className="pt-20 pb-12 px-6 relative overflow-hidden">
+                <HeroBackground backgroundImage="/team3.jpg" />
+                <div className="max-w-5xl mx-auto bg-white dark:bg-zinc-900 rounded-[40px] p-12 md:p-20 shadow-xl border border-zinc-100 dark:border-zinc-800 relative z-10">
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="flex-1 space-y-8 text-center md:text-left">
                             <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest">
@@ -52,13 +54,13 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                                 <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white">
                                     {data.cta}
                                 </Button>
-                                <Button variant="outline" size="lg">Maintenance Plans</Button>
+                                <Button variant="outline" size="lg">Check Our Process</Button>
                             </div>
                         </div>
                         <div className="w-full md:w-80 p-8 bg-zinc-800/50 rounded-3xl border border-zinc-700">
                             <h3 className="font-bold text-center mb-6">Free Resource</h3>
                             <ImagePlaceholder text="WP Speed E-book" aspect="square" className="mb-6" />
-                            <Button variant="secondary" className="w-full">Download SEO Checklist</Button>
+                            <Button variant="secondary" className="w-full">See How It Works</Button>
                         </div>
                     </div>
                 </div>

@@ -6,13 +6,16 @@ import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 import { FiShoppingCart, FiCheckCircle } from "react-icons/fi";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { ComponentType } from "react";
+import { Accordion } from "@/components/ui/Accordion";
+import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function ShopifyHub() {
     return (
         <div className="min-h-screen bg-black text-white px-6">
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden text-center">
-                <div className="absolute inset-0 bg-gradient-to-b from-green-500/10 to-transparent opacity-30 pointer-events-none" />
+                <HeroBackground backgroundImage="/team4.jpg" />
                 <div className="max-w-6xl mx-auto w-full relative z-10">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
@@ -22,7 +25,7 @@ export default function ShopifyHub() {
                         <div className="inline-block p-4 rounded-3xl bg-green-500/10 border border-green-500/20 mb-10 text-green-500">
                             <FiShoppingCart className="text-4xl" />
                         </div>
-                        <h1 className="text-5xl md:text-8xl font-black italic tracking-tighter leading-[0.8] uppercase mb-12">
+                        <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase mb-12">
                             High-Converting Shopify Stores<br />Built to Scale Sales.
                         </h1>
                         <p className="text-xl md:text-3xl text-zinc-400 max-w-4xl mx-auto font-medium leading-relaxed mb-16">
@@ -30,7 +33,7 @@ export default function ShopifyHub() {
                         </p>
                         <Link href="#strategy">
                             <Button size="lg" className="h-16 px-10 text-lg font-bold mb-20 group">
-                                <span className="group-hover:translate-x-1 transition-transform inline-block">👉 Get a Shopify Store That Converts</span>
+                                <span className="group-hover:translate-x-1 transition-transform inline-block">Launch My Store</span>
                             </Button>
                         </Link>
                     </motion.div>
@@ -42,7 +45,7 @@ export default function ShopifyHub() {
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-500 text-center mb-16">E-commerce Authority Engineering</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                        {pages.map((page, i) => (
+                        {pages.slice(0, 9).map((page, i) => (
                             <Link
                                 key={page.slug}
                                 href={`/shopify/${page.slug}`}
@@ -62,6 +65,49 @@ export default function ShopifyHub() {
                 </div>
             </section>
 
+
+            {/* FAQ Section */}
+            <section className="py-24 border-t border-zinc-900 bg-zinc-950">
+                <div className="max-w-4xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
+                    <p className="text-zinc-400 text-center mb-12">Everything you need to know about our Shopify commerce services</p>
+                    <Accordion items={[
+                        {
+                            question: "Is Shopify the right choice for my business?",
+                            answer: "Shopify is the gold standard for e-commerce. It's ideal if you need a reliable, scalable platform with built-in payment processing, inventory management, and a vast app ecosystem. It works best for brands focused on selling physical or digital products globally without worrying about server maintenance."
+                        },
+                        {
+                            question: "What does your Shopify store building process look like?",
+                            answer: "We focus on conversion architecture first. We map out your product discovery paths, design high-intent landing pages, and optimize the checkout flow. We integrate necessary apps for shipping, taxes, and marketing, then conduct rigorous performance testing before launch."
+                        },
+                        {
+                            question: "How long does it take to build a Shopify store?",
+                            answer: "A standard high-performance Shopify build typically takes 3–6 weeks. Complex migrations or custom headless implementations using Hydrogen/Oxygen may take 8–12 weeks. We move fast but never compromise on the data-layer integrity."
+                        },
+                        {
+                            question: "How much does a Shopify store cost?",
+                            answer: "Pricing is based on the complexity of your product catalog, third-party integrations, and design requirements. We offer everything from optimized theme setups to fully bespoke headless commerce platforms. Every quote is custom-tailored to your expected ROI."
+                        },
+                        {
+                            question: "Will my Shopify site be SEO-friendly?",
+                            answer: "Absolutely. We go beyond basic settings, optimizing your Liquid code for speed, implementing advanced schema for products and reviews, and ensuring a technical structure that search engines love. Performance is our primary SEO lever."
+                        },
+                        {
+                            question: "Can I update the website myself after launch?",
+                            answer: "Yes. Shopify's Online Store 2.0 makes it incredibly easy for your team to manage sections, blocks, and content without a developer. We provide full training to ensure you're empowered to run your business."
+                        },
+                        {
+                            question: "Do you offer migrations from other platforms?",
+                            answer: "We specialize in migrating brands from WooCommerce, Magento, or BigCommerce to Shopify. We handle the data migration, preserve your SEO rankings, and ensure zero downtime during the transition."
+                        },
+                        {
+                            question: "How does Shopify compare to Webflow or WordPress?",
+                            answer: "Shopify is built specifically for commerce with robust native checkout and security. Webflow is superior for pure marketing design, and WordPress is best for heavy content publishing. We recommend Shopify if your primary goal is scaling sales."
+                        }
+                    ]} />
+                </div>
+            </section>
+
             {/* Strategy Section */}
             <section id="strategy" className="py-40 border-t border-zinc-900 bg-black">
                 <div className="max-w-7xl mx-auto">
@@ -74,7 +120,7 @@ export default function ShopifyHub() {
                                     viewport={{ once: true }}
                                 >
                                     <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter mb-6 uppercase leading-[0.9]">
-                                        Let&apos;s Find Why Your<br />Website Isn&apos;t Converting.
+                                        Scale My Business<br />Online.
                                     </h2>
                                     <p className="text-zinc-400 leading-relaxed font-medium">
                                         Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.
