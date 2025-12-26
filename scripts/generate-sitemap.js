@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_URL = process.env.BASE_URL || 'https://agencey.pro';
-const outPath = path.join(process.cwd(), 'public', 'sitemap.xml');
+const outPath = path.join(process.cwd(), 'out', 'sitemap.xml');
 
 function readJson(rel) {
   const p = path.join(process.cwd(), rel);
@@ -16,23 +16,23 @@ function extractSlugsFromPseo() {
   const txt = fs.readFileSync(p, 'utf8');
   const industrySlugs = [...txt.matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]);
   // assume first block is industries then locations
-  const industries = industrySlugs.slice(0, Math.floor(industrySlugs.length/2));
-  const locations = industrySlugs.slice(Math.floor(industrySlugs.length/2));
+  const industries = industrySlugs.slice(0, Math.floor(industrySlugs.length / 2));
+  const locations = industrySlugs.slice(Math.floor(industrySlugs.length / 2));
   // More robust: parse objects by section headings
   const industriesMatch = txt.match(/export const industries[\s\S]*?\];/);
   const locationsMatch = txt.match(/export const locations[\s\S]*?\];/);
-  const inds = industriesMatch ? [...industriesMatch[0].matchAll(/slug:\s*'([^']+)'/g)].map(m=>m[1]) : industries;
-  const locs = locationsMatch ? [...locationsMatch[0].matchAll(/slug:\s*'([^']+)'/g)].map(m=>m[1]) : locations;
+  const inds = industriesMatch ? [...industriesMatch[0].matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]) : industries;
+  const locs = locationsMatch ? [...locationsMatch[0].matchAll(/slug:\s*'([^']+)'/g)].map(m => m[1]) : locations;
   return { industries: inds, locations: locs };
 }
 
 function buildUrls() {
   const urls = [];
-  const now = new Date().toISOString().slice(0,10);
+  const now = new Date().toISOString().slice(0, 10);
 
   // static routes
   const staticRoutes = ['/', '/webflow', '/wordpress', '/shopify', '/contact', '/custom', '/design', '/seo', '/services', '/social-media'];
-  for (const r of staticRoutes) urls.push({ loc: `${BASE_URL}${r}`, lastmod: now, changefreq: 'weekly', priority: r==='/'?1:0.8 });
+  for (const r of staticRoutes) urls.push({ loc: `${BASE_URL}${r}`, lastmod: now, changefreq: 'weekly', priority: r === '/' ? 1 : 0.8 });
 
   // platform pages
   const webflow = readJson('data/webflow/pages.json');
