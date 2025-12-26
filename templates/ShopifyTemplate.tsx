@@ -1,4 +1,9 @@
+"use client";
+
 import React from 'react';
+import { motion } from "framer-motion";
+import { MarketingFunnelChart } from '@/components/dashboard/MarketingFunnelChart';
+import { ClientGrowthChart } from '@/components/dashboard/ClientGrowthChart';
 import { SeoHead } from '@/components/seo/SeoHead';
 import { LeadForm } from '@/components/forms/LeadForm';
 import { Button } from '@/components/ui/Button';
@@ -42,23 +47,29 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             <header className="relative pt-48 pb-24 px-6 overflow-hidden">
                 <HeroBackground backgroundImage="/team4.jpg" />
                 <div className="max-w-5xl mx-auto text-center relative z-10">
-                    <div className="inline-block px-3 py-1 mb-8 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-[10px] font-bold uppercase tracking-[0.2em]">
-                        Performance Shopify Solution
-                    </div>
-                    <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic uppercase">
-                        {data.title}
-                    </h1>
-                    <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
-                        {data.description}
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
-                        <Button size="lg" className="bg-green-500 text-black px-16 hover:bg-green-400 border-none">
-                            {data.cta}
-                        </Button>
-                        <a href="#roi" className="text-xs font-bold uppercase tracking-[0.3em] border-b border-zinc-800 pb-2 hover:text-green-500 transition-colors">
-                            See Real Results
-                        </a>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="inline-block px-3 py-1 mb-8 rounded-full border border-green-500/30 bg-green-500/10 text-green-400 text-[10px] font-bold uppercase tracking-[0.2em]">
+                            Performance Shopify Solution
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic uppercase">
+                            {data.title}
+                        </h1>
+                        <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
+                            {data.description}
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+                            <Button size="lg" className="bg-green-500 text-black px-16 hover:bg-green-400 border-none">
+                                {data.cta}
+                            </Button>
+                            <a href="#roi" className="text-xs font-bold uppercase tracking-[0.3em] border-b border-zinc-800 pb-2 hover:text-green-500 transition-colors">
+                                See Real Results
+                            </a>
+                        </div>
+                    </motion.div>
                 </div>
             </header>
 
@@ -101,6 +112,20 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </Section>
+
+            {/* Performance Charts */}
+            <Section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950/50">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-black tracking-tighter mb-4 italic">Revenue & ROI</h2>
+                        <p className="text-zinc-400">Track every dollar from click to checkout.</p>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <MarketingFunnelChart />
+                        <ClientGrowthChart />
                     </div>
                 </div>
             </Section>

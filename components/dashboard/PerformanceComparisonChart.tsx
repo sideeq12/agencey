@@ -1,6 +1,7 @@
 "use client";
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell, Legend } from 'recharts';
+import { motion } from 'framer-motion';
 
 const data = [
     { metric: 'Page Speed', before: 45, after: 98, fullMark: 100 },
@@ -14,7 +15,13 @@ const data = [
 
 export function PerformanceComparisonChart() {
     return (
-        <div className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-green-500/30 transition-colors"
+        >
             <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Before vs After Launch</h3>
                 <p className="text-zinc-400 text-sm">Impact on Core Web Vitals and Engagement</p>
@@ -53,6 +60,6 @@ export function PerformanceComparisonChart() {
             <div className="mt-4 flex gap-4 text-xs text-zinc-500 justify-center">
                 <span>*Bounce Rate inverted for visual consistency (Higher retention is better)</span>
             </div>
-        </div>
+        </motion.div>
     );
 }

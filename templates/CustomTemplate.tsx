@@ -1,4 +1,9 @@
+"use client";
+
 import React from 'react';
+import { motion } from "framer-motion";
+import { ServiceImpactChart } from '@/components/dashboard/ServiceImpactChart';
+import { ProjectTimelineChart } from '@/components/dashboard/ProjectTimelineChart';
 import { SeoHead } from '@/components/seo/SeoHead';
 import { LeadForm } from '@/components/forms/LeadForm';
 import { Button } from '@/components/ui/Button';
@@ -43,7 +48,12 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
             <header className="pt-40 pb-20 px-6 relative overflow-hidden">
                 <HeroBackground backgroundImage="/team5.jpg" />
                 <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-                    <div className="space-y-8">
+                    <motion.div
+                        className="space-y-8"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <div className="inline-block px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold uppercase tracking-widest text-zinc-400">
                             Custom Engineering Experts
                         </div>
@@ -57,7 +67,7 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                             <Button size="lg">{data.cta}</Button>
                             <Button variant="outline" size="lg">Explore Our Services</Button>
                         </div>
-                    </div>
+                    </motion.div>
                     <ImagePlaceholder text="Engineering Excellence" aspect="video" className="shadow-[0_0_100px_rgba(168,85,247,0.1)] rounded-[40px]" />
                 </div>
             </header>
@@ -99,6 +109,20 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </Section>
+
+            {/* Performance Metrics */}
+            <Section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950/50">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-black tracking-tighter mb-4 italic">Benchmarked Speed</h2>
+                        <p className="text-zinc-400">Why custom architectures outperform everything else.</p>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <ServiceImpactChart />
+                        <ProjectTimelineChart />
                     </div>
                 </div>
             </Section>

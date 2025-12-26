@@ -1,4 +1,9 @@
+"use client";
+
 import React from 'react';
+import { motion } from "framer-motion";
+import { PerformanceComparisonChart } from '@/components/dashboard/PerformanceComparisonChart';
+import { SeoProgressChart } from '@/components/dashboard/SeoProgressChart';
 import { SeoHead } from '@/components/seo/SeoHead';
 import { LeadForm } from '@/components/forms/LeadForm';
 import { Button } from '@/components/ui/Button';
@@ -42,21 +47,27 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                 <div className="max-w-5xl mx-auto bg-white dark:bg-zinc-900 rounded-[40px] p-12 md:p-20 shadow-xl border border-zinc-100 dark:border-zinc-800 relative z-10">
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="flex-1 space-y-8 text-center md:text-left">
-                            <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest">
-                                WordPress Ecosystem Experts
-                            </div>
-                            <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1] text-zinc-900 dark:text-zinc-50">
-                                {data.title}
-                            </h1>
-                            <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-xl">
-                                {data.description}
-                            </p>
-                            <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-                                <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white">
-                                    {data.cta}
-                                </Button>
-                                <Button variant="outline" size="lg">Check Our Process</Button>
-                            </div>
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.6 }}
+                            >
+                                <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
+                                    WordPress Ecosystem Experts
+                                </div>
+                                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1] text-zinc-900 dark:text-zinc-50 mb-6">
+                                    {data.title}
+                                </h1>
+                                <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-xl mb-8">
+                                    {data.description}
+                                </p>
+                                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                                    <Button size="lg" className="bg-blue-600 hover:bg-blue-500 text-white">
+                                        {data.cta}
+                                    </Button>
+                                    <Button variant="outline" size="lg">Check Our Process</Button>
+                                </div>
+                            </motion.div>
                         </div>
                         <div className="w-full md:w-80 p-8 bg-zinc-800/50 rounded-3xl border border-zinc-700">
                             <h3 className="font-bold text-center mb-6">Free Resource</h3>
@@ -96,6 +107,20 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                         <LeadForm service="wordpress" source={data.slug} />
                     </div>
                 </aside>
+            </Section>
+
+            {/* Performance Metrics */}
+            <Section className="py-24 px-6 border-y border-zinc-900 bg-zinc-950/30">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold mb-4">Optimized for Growth</h2>
+                        <p className="text-zinc-400">See the impact of a properly architected WordPress build.</p>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <PerformanceComparisonChart />
+                        <SeoProgressChart />
+                    </div>
+                </div>
             </Section>
 
             {/* FAQ Section */}

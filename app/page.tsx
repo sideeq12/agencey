@@ -203,8 +203,10 @@ export default function Home() {
             ].map((service, i) => (
               <motion.div
                 key={i}
-                // Removed viewport trigger here as parent Section handles overall reveal, 
-                // but we can keep hover effects. The parent Section will fade the whole grid in.
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group p-8 rounded-[40px] bg-zinc-950 border border-zinc-900 hover:border-white/20 transition-all duration-500 relative overflow-hidden"
               >
                 <div className={`w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center mb-8 border border-zinc-800 group-hover:border-${service.color}-500/50 group-hover:bg-${service.color}-500/10 transition-colors`}>
@@ -238,18 +240,36 @@ export default function Home() {
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-12">Why Agencey?</h2>
             <div className="space-y-8">
-              <div className="border-l-4 border-blue-500 pl-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="border-l-4 border-blue-500 pl-6"
+              >
                 <h4 className="text-xl font-bold mb-2">Radical Focus</h4>
                 <p className="text-zinc-400">We don't do generalists. Each engineer is a master of their specific vertical.</p>
-              </div>
-              <div className="border-l-4 border-purple-500 pl-6">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="border-l-4 border-purple-500 pl-6"
+              >
                 <h4 className="text-xl font-bold mb-2">No-Code Speed</h4>
                 <p className="text-zinc-400">Leveraging Webflow and Shopify to ship enterprise solutions in weeks, not months.</p>
-              </div>
-              <div className="border-l-4 border-green-500 pl-6">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="border-l-4 border-green-500 pl-6"
+              >
                 <h4 className="text-xl font-bold mb-2">Built for Scale</h4>
                 <p className="text-zinc-400">pSEO systems that manage 10,000+ pages with minimal maintenance overhead.</p>
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className="bg-zinc-900/50 rounded-3xl border border-zinc-800 p-12 text-center">

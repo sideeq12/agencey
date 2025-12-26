@@ -1,6 +1,7 @@
 "use client";
 
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Legend, Tooltip } from 'recharts';
+import { motion } from 'framer-motion';
 
 const data = [
     { subject: 'Speed', A: 120, B: 90, fullMark: 150 },
@@ -13,7 +14,13 @@ const data = [
 
 export function ServiceImpactChart() {
     return (
-        <div className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-orange-500/30 transition-colors"
+        >
             <div className="mb-4">
                 <h3 className="text-2xl font-bold text-white mb-2">Platform Power</h3>
                 <p className="text-zinc-400 text-sm">Comparing Agencey Custom Stacks vs. Standard Themes</p>
@@ -48,6 +55,6 @@ export function ServiceImpactChart() {
                     </RadarChart>
                 </ResponsiveContainer>
             </div>
-        </div>
+        </motion.div>
     );
 }

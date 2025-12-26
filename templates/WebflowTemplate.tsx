@@ -1,4 +1,9 @@
+"use client";
+
 import React from 'react';
+import { motion } from "framer-motion";
+import { ServiceImpactChart } from '@/components/dashboard/ServiceImpactChart';
+import { ProjectTimelineChart } from '@/components/dashboard/ProjectTimelineChart';
 import { SeoHead } from '@/components/seo/SeoHead';
 import { LeadForm } from '@/components/forms/LeadForm';
 import { Button } from '@/components/ui/Button';
@@ -43,19 +48,25 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
             <header className="relative pt-48 pb-24 px-6 overflow-hidden">
                 <HeroBackground backgroundImage="/team2.jpg" />
                 <div className="max-w-5xl mx-auto text-center relative z-10">
-                    <div className="inline-block px-3 py-1 mb-8 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-                        Premium Webflow Development
-                    </div>
-                    <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic">
-                        {data.title}
-                    </h1>
-                    <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
-                        {data.description}
-                    </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <Button size="lg" className="px-12">{data.cta}</Button>
-                        <Button variant="outline" size="lg">View Our Work</Button>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <div className="inline-block px-3 py-1 mb-8 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                            Premium Webflow Development
+                        </div>
+                        <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic">
+                            {data.title}
+                        </h1>
+                        <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
+                            {data.description}
+                        </p>
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                            <Button size="lg" className="px-12">{data.cta}</Button>
+                            <Button variant="outline" size="lg">View Our Work</Button>
+                        </div>
+                    </motion.div>
                 </div>
             </header>
 
@@ -98,6 +109,20 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </Section>
+
+            {/* Performance Dashboard */}
+            <Section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950/50">
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-16">
+                        <h2 className="text-4xl font-black tracking-tighter mb-4 italic">Performance & Velocity</h2>
+                        <p className="text-zinc-400">Why leading brands switch to our Webflow stack.</p>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <ServiceImpactChart />
+                        <ProjectTimelineChart />
                     </div>
                 </div>
             </Section>

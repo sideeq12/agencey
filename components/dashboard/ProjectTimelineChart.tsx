@@ -12,7 +12,13 @@ const phases = [
 
 export function ProjectTimelineChart() {
     return (
-        <div className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-green-500/30 transition-colors"
+        >
             <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Delivery Velocity</h3>
                 <p className="text-zinc-400 text-sm">Typical 8-week sprint from Kickoff to Launch</p>
@@ -35,7 +41,8 @@ export function ProjectTimelineChart() {
                             <motion.div
                                 initial={{ width: 0 }}
                                 whileInView={{ width: `${phase.weeks * 12.5}%` }}
-                                transition={{ duration: 1, delay: i * 0.2 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1, delay: i * 0.2 + 0.4 }} // Added delay to sync after container fade in
                                 className={`absolute h-full rounded-md ${phase.color} opacity-90`}
                                 style={{ left: `${phase.start * 12.5}%` }}
                             />
@@ -43,6 +50,6 @@ export function ProjectTimelineChart() {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 }

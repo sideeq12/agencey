@@ -1,6 +1,7 @@
 "use client";
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
+import { motion } from 'framer-motion';
 
 const data = [
     { stage: 'Visitors', value: 15000, color: '#3b82f6' },
@@ -10,7 +11,13 @@ const data = [
 
 export function MarketingFunnelChart() {
     return (
-        <div className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-purple-500/30 transition-colors"
+        >
             <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">Conversion Funnel</h3>
                 <p className="text-zinc-400 text-sm">Optimized flow from traffic to revenue</p>
@@ -48,6 +55,6 @@ export function MarketingFunnelChart() {
                     </BarChart>
                 </ResponsiveContainer>
             </div>
-        </div>
+        </motion.div>
     );
 }

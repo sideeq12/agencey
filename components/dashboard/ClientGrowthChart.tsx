@@ -15,7 +15,13 @@ const data = [
 
 export function ClientGrowthChart() {
     return (
-        <div className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8">
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-blue-500/30 transition-colors"
+        >
             <div className="mb-8">
                 <h3 className="text-2xl font-bold text-white mb-2">90-Day Client Growth</h3>
                 <p className="text-zinc-400 text-sm">Average performance trajectory for new partners</p>
@@ -60,6 +66,6 @@ export function ClientGrowthChart() {
                     </ComposedChart>
                 </ResponsiveContainer>
             </div>
-        </div>
+        </motion.div>
     );
 }
