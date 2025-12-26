@@ -9,6 +9,10 @@ import { LeadForm } from "@/components/forms/LeadForm";
 import { ComponentType } from "react";
 import { Accordion } from "@/components/ui/Accordion";
 import { HeroBackground } from "@/components/ui/HeroBackground";
+import { Section } from "@/components/ui/Section";
+import { ServiceImpactChart } from "@/components/dashboard/ServiceImpactChart";
+import { MarketingFunnelChart } from "@/components/dashboard/MarketingFunnelChart";
+
 
 export default function WordPressHub() {
     return (
@@ -41,7 +45,7 @@ export default function WordPressHub() {
             </section>
 
             {/* Platform Sub-services / Pages */}
-            <section className="py-24 border-t border-zinc-900 bg-zinc-950/50">
+            <Section className="py-24 border-t border-zinc-900 bg-zinc-950/50">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-500 text-center mb-16">Enterprise WordPress Calibration</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -63,11 +67,26 @@ export default function WordPressHub() {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
+
+
+            {/* Performance Breakdown */}
+            <Section className="py-24 border-t border-zinc-900 bg-black">
+                <div className="max-w-7xl mx-auto">
+                    <div className="mb-16 text-center">
+                        <h2 className="text-4xl font-bold mb-4">WordPress Done Right</h2>
+                        <p className="text-zinc-400">Comparing our enterprise stack against standard installs.</p>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <ServiceImpactChart />
+                        <MarketingFunnelChart />
+                    </div>
+                </div>
+            </Section>
 
             {/* FAQ Section */}
-            <section className="py-24 border-t border-zinc-900 bg-zinc-950">
+            <Section className="py-24 border-t border-zinc-900 bg-zinc-950">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
                     <p className="text-zinc-400 text-center mb-12">Everything you need to know about our WordPress services</p>
@@ -106,10 +125,10 @@ export default function WordPressHub() {
                         }
                     ]} />
                 </div>
-            </section>
+            </Section>
 
             {/* Strategy Section */}
-            <section id="strategy" className="py-40 border-t border-zinc-900 bg-black">
+            <Section id="strategy" className="py-40 border-t border-zinc-900 bg-black">
                 <div className="max-w-7xl mx-auto">
                     <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-16 rounded-[60px] shadow-2xl text-left">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -151,7 +170,7 @@ export default function WordPressHub() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
         </div>
     );
 }

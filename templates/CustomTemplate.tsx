@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
 import { HeroBackground } from '@/components/ui/HeroBackground';
+import { Section } from '@/components/ui/Section';
 
 interface CustomTemplateProps {
     data: {
@@ -26,7 +27,7 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
         "provider": {
             "@type": "Organization",
             "name": "Agencey",
-            "url": "https://agencey.com"
+            "url": "https://agencey.pro"
         },
         "serviceType": "Custom Web Development"
     };
@@ -62,7 +63,7 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
             </header>
 
             {/* Feature Grid */}
-            <section className="py-24 px-6 bg-zinc-950">
+            <Section className="py-24 px-6 bg-zinc-950">
                 <div className="max-w-6xl mx-auto">
                     <h2 className="text-sm font-black uppercase tracking-[0.3em] text-zinc-500 mb-16 text-center">Built for Performance</h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -77,10 +78,10 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* Process Section */}
-            <section className="py-24 px-6 border-y border-zinc-900">
+            <Section className="py-24 px-6 border-y border-zinc-900">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl font-bold mb-20 text-center tracking-tight italic">Our Methodology</h2>
                     <div className="space-y-20">
@@ -100,10 +101,10 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* Testimonials (Standardization) */}
-            <section className="py-24 px-6 bg-zinc-950">
+            <Section className="py-24 px-6 bg-zinc-950">
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                         <div className="space-y-8">
@@ -117,10 +118,10 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* FAQ Section */}
-            <section className="py-24 px-6 bg-black border-y border-zinc-900">
+            <Section className="py-24 px-6 bg-black border-y border-zinc-900">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
                     <p className="text-zinc-400 text-center mb-12">Everything you need to know about our custom engineering services</p>
@@ -159,10 +160,10 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                         }
                     ]} />
                 </div>
-            </section>
+            </Section>
 
             {/* Lead Capture */}
-            <section className="py-32 px-6">
+            <Section className="py-32 px-6">
                 <div className="max-w-4xl mx-auto p-12 md:p-20 rounded-[60px] bg-purple-600/10 border border-purple-500/20 shadow-[0_0_100px_rgba(168,85,247,0.1)]">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-8 underline decoration-purple-500 underline-offset-8 italic">Ready to Build?</h2>
@@ -170,7 +171,7 @@ export const CustomTemplate: React.FC<CustomTemplateProps> = ({ data }) => {
                     </div>
                     <LeadForm service="custom" source={data.slug} />
                 </div>
-            </section>
+            </Section>
 
             {/* Footer */}
             <footer className="py-20 px-6 border-t border-zinc-900">

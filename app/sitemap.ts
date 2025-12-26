@@ -4,8 +4,9 @@ import { MetadataRoute } from 'next';
 import webflowPages from '@/data/webflow/pages.json';
 import wordpressPages from '@/data/wordpress/pages.json';
 import shopifyPages from '@/data/shopify/pages.json';
+import customPages from '@/data/custom/pages.json';
 
-const BASE_URL = 'https://agency.com'; // Replace with actual domain
+const BASE_URL = 'https://agencey.pro'; // Replace with actual domain
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const staticRoutes = [
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/webflow',
         '/wordpress',
         '/shopify',
+        '/custom',
         '/contact',
     ].map((route) => ({
         url: `${BASE_URL}${route}`,
@@ -42,8 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }));
 
-
-    const customSitemap = (require('@/data/custom/pages.json') as any[]).map((p) => ({
+    const customSitemap = customPages.map((p) => ({
         url: `${BASE_URL}/custom/${p.slug}`,
         lastModified: new Date(),
         changeFrequency: 'monthly' as const,
@@ -52,7 +53,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     return [
         ...staticRoutes,
-        { url: `${BASE_URL}/custom`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.8 },
         ...webflowSitemap,
         ...wordpressSitemap,
         ...shopifySitemap,

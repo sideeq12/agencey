@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
 import { HeroBackground } from '@/components/ui/HeroBackground';
+import { Section } from '@/components/ui/Section';
 
 interface WebflowTemplateProps {
     data: {
@@ -26,7 +27,7 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
         "provider": {
             "@type": "Organization",
             "name": "Agencey",
-            "url": "https://agencey.com"
+            "url": "https://agencey.pro"
         },
         "serviceType": "Webflow Development"
     };
@@ -59,7 +60,7 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
             </header>
 
             {/* Feature Grid (Standardization) */}
-            <section className="py-24 px-6 border-y border-zinc-900">
+            <Section className="py-24 px-6 border-y border-zinc-900">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
                     {[
                         { t: "Pixel Perfect", d: "We translate high-fidelity designs into fluid, responsive Webflow sites without compromise." },
@@ -76,10 +77,10 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                         </div>
                     ))}
                 </div>
-            </section>
+            </Section>
 
             {/* Process Section */}
-            <section className="py-24 px-6 bg-black">
+            <Section className="py-24 px-6 bg-black">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="text-5xl font-black italic tracking-tighter mb-20 text-center uppercase">Our Build Protocol</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -99,10 +100,10 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* Testimonials */}
-            <section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950">
+            <Section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950">
                 <div className="max-w-6xl mx-auto">
                     <div className="bg-black border border-zinc-900 rounded-[60px] p-12 md:p-24 text-center">
                         <p className="text-2xl md:text-4xl font-black italic leading-tight mb-12">
@@ -117,10 +118,10 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* FAQ Section */}
-            <section className="py-24 px-6 bg-zinc-950">
+            <Section className="py-24 px-6 bg-zinc-950">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
                     <p className="text-zinc-400 text-center mb-12">Everything you need to know about our Webflow services</p>
@@ -159,10 +160,10 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                         }
                     ]} />
                 </div>
-            </section>
+            </Section>
 
             {/* Lead Section */}
-            <section className="py-32 px-6">
+            <Section className="py-32 px-6">
                 <div className="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
                         <h2 className="text-5xl font-black tracking-tight mb-8">Let's scale your project.</h2>
@@ -184,7 +185,7 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                         <LeadForm service="webflow" source={data.slug} />
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* Footer */}
             <footer className="py-12 border-t border-zinc-900">

@@ -3,6 +3,11 @@
 import { Button } from "@/components/ui/Button";
 import { HeroBackground } from "@/components/ui/HeroBackground";
 import { Accordion } from "@/components/ui/Accordion";
+import { Section } from "@/components/ui/Section";
+import { ClientGrowthChart } from "@/components/dashboard/ClientGrowthChart";
+import { PerformanceComparisonChart } from "@/components/dashboard/PerformanceComparisonChart";
+import { ProjectTimelineChart } from "@/components/dashboard/ProjectTimelineChart";
+import { SeoProgressChart } from "@/components/dashboard/SeoProgressChart";
 import Link from "next/link";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { useState } from "react";
@@ -51,7 +56,7 @@ export default function Home() {
       </header>
 
       {/* 2. Trust Bar */}
-      <section className="py-16 border-y border-zinc-900/50">
+      <Section className="py-16 border-y border-zinc-900/50">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-center mb-10 text-zinc-500">Trusted by Leading Companies</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40">
@@ -67,10 +72,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 3. Services Grid */}
-      <section className="py-24 px-6">
+      <Section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
@@ -82,9 +87,8 @@ export default function Home() {
               return (
                 <Link key={service.title} href={service.href} className="group">
                   <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    // Use a slightly different animation logic here since it's inside a Section that already reveals
+                    // Or keep the stagger effect as "children" variants if we were nesting, but keep it simple for now and rely on hover
                     className={`p-8 rounded-2xl bg-gradient-to-br ${service.color} border border-zinc-800/50 hover:border-zinc-700 transition-all duration-300 h-full flex flex-col`}
                   >
                     <Icon className="text-4xl mb-4 text-zinc-300 group-hover:text-white transition-colors" />
@@ -99,10 +103,10 @@ export default function Home() {
             })}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 4. Methodology (The Protocol) */}
-      <section className="py-24 px-6 bg-zinc-950/50">
+      <Section className="py-24 px-6 bg-zinc-950/50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">The Protocol</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -121,6 +125,15 @@ export default function Home() {
               </div>
             ))}
           </div>
+
+          <div className="mt-24">
+            <div className="mb-12 text-center">
+              <h3 className="text-2xl font-bold mb-4">Accelerated Delivery</h3>
+              <p className="text-zinc-400">From kickoff to launch in weeks, not months.</p>
+            </div>
+            <ProjectTimelineChart />
+          </div>
+
           <div className="mt-16 text-center">
             <Link href="#contact">
               <Button variant="outline" size="lg" className="border-zinc-700 hover:bg-zinc-900 group">
@@ -129,10 +142,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 5. Growth & Scale Architecture */}
-      <section className="py-32 px-6 bg-black">
+      <Section className="py-32 px-6 bg-black">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-8 uppercase leading-[0.9]">
@@ -190,10 +203,8 @@ export default function Home() {
             ].map((service, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                // Removed viewport trigger here as parent Section handles overall reveal, 
+                // but we can keep hover effects. The parent Section will fade the whole grid in.
                 className="group p-8 rounded-[40px] bg-zinc-950 border border-zinc-900 hover:border-white/20 transition-all duration-500 relative overflow-hidden"
               >
                 <div className={`w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center mb-8 border border-zinc-800 group-hover:border-${service.color}-500/50 group-hover:bg-${service.color}-500/10 transition-colors`}>
@@ -219,10 +230,10 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 5. Value Proposition */}
-      <section className="py-24 px-6">
+      <Section className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-12">Why Agencey?</h2>
@@ -254,32 +265,33 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* 6. Proof of Work (Stats) */}
-      <section className="py-20 px-6 border-y border-zinc-900/50 bg-zinc-950/30">
-        <div className="max-w-6xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-          {[
-            { label: "Pages Generated", val: "1,200+" },
-            { label: "Client Success", val: "99.8%" },
-            { label: "Page Load Avg", val: "400ms" },
-            { label: "Active Units", val: "04" }
-          ].map((stat, i) => (
-            <div key={i} className="space-y-2">
-              <p className="text-4xl md:text-5xl font-bold">{stat.val}</p>
-              <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">{stat.label}</p>
-            </div>
-          ))}
+      {/* 6. Proof of Work (Growth Charts) */}
+      {/* 6. Performance Dashboard (Replaces Proof of Work) */}
+      <Section className="py-24 px-6 border-y border-zinc-900/50 bg-zinc-950/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Measurable Impact</h2>
+            <p className="text-zinc-400">The results we deliver for our partners.</p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+            <ClientGrowthChart />
+            <PerformanceComparisonChart />
+            <SeoProgressChart />
+          </div>
+
+          <div className="mt-16 text-center">
+            <Link href="/webflow" className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors group">
+              View Our Work <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
-        <div className="mt-16 text-center">
-          <Link href="/webflow" className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors group">
-            View Our Work <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
-      </section>
+      </Section>
 
       {/* 7. FAQ Section */}
-      <section className="py-24 px-6">
+      <Section className="py-24 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">Frequently Asked Questions</h2>
           <div className="space-y-10">
@@ -322,10 +334,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       {/* 8. Final CTA Section */}
-      <section className="py-24 px-6" id="contact">
+      <Section className="py-24 px-6" id="contact">
         <div className="max-w-5xl mx-auto bg-gradient-to-br from-zinc-900 to-zinc-950 p-12 md:p-16 rounded-3xl border border-zinc-800">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-12">
@@ -361,7 +373,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
       <footer className="py-16 px-6 border-t border-zinc-900/50">
         <div className="max-w-6xl mx-auto">

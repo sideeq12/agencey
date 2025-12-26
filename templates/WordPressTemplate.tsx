@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
 import { HeroBackground } from '@/components/ui/HeroBackground';
+import { Section } from '@/components/ui/Section';
 
 interface WordPressTemplateProps {
     data: {
@@ -26,7 +27,7 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
         "provider": {
             "@type": "Organization",
             "name": "Agencey",
-            "url": "https://agencey.com"
+            "url": "https://agencey.pro"
         },
         "serviceType": "WordPress Development"
     };
@@ -66,7 +67,7 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                 </div>
             </header>
 
-            <section className="py-20 px-6 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+            <Section className="py-20 px-6 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
                 <div className="lg:col-span-8 space-y-12">
                     <div className="prose prose-invert max-w-none">
                         <h2 className="text-3xl font-bold mb-6">Unlocking WordPress Potential</h2>
@@ -95,10 +96,10 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                         <LeadForm service="wordpress" source={data.slug} />
                     </div>
                 </aside>
-            </section>
+            </Section>
 
             {/* FAQ Section */}
-            <section className="py-24 px-6">
+            <Section className="py-24 px-6">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
                     <p className="text-zinc-400 text-center mb-12">Everything you need to know about our WordPress services</p>
@@ -137,7 +138,7 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                         }
                     ]} />
                 </div>
-            </section>
+            </Section>
 
             {/* Conversion Section */}
             <footer className="py-12 border-t border-zinc-800 bg-zinc-950">

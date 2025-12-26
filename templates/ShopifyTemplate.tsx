@@ -6,6 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
 import { HeroBackground } from '@/components/ui/HeroBackground';
+import { Section } from '@/components/ui/Section';
 
 interface ShopifyTemplateProps {
     data: {
@@ -26,7 +27,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
         "provider": {
             "@type": "Organization",
             "name": "Agencey",
-            "url": "https://agencey.com"
+            "url": "https://agencey.pro"
         },
         "serviceType": "Shopify Development"
     };
@@ -62,7 +63,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             </header>
 
             {/* Feature Grid */}
-            <section className="py-24 px-6 border-y border-zinc-900 bg-zinc-950">
+            <Section className="py-24 px-6 border-y border-zinc-900 bg-zinc-950">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {[
                         { h: "Headless Commerce", p: "Vercel + Hydrogen implementations for instant load times." },
@@ -79,10 +80,10 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                         </div>
                     ))}
                 </div>
-            </section>
+            </Section>
 
             {/* Methodology */}
-            <section className="py-32 px-6 bg-black" id="roi">
+            <Section className="py-32 px-6 bg-black" id="roi">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-5xl font-black italic mb-20 text-center tracking-tighter">THE CONVERSION ENGINE.</h2>
                     <div className="grid grid-cols-1 gap-12">
@@ -102,10 +103,10 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                         ))}
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* Testimonial / Proof */}
-            <section className="py-32 px-6 border-t border-zinc-900">
+            <Section className="py-32 px-6 border-t border-zinc-900">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                     <div className="space-y-8">
                         <p className="text-[10px] font-black uppercase tracking-[0.5em] text-green-500">Case Study: Fashion Brand X</p>
@@ -120,10 +121,10 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                         <LeadForm service="shopify" source={data.slug} />
                     </div>
                 </div>
-            </section>
+            </Section>
 
             {/* FAQ Section */}
-            <section className="py-24 px-6 bg-zinc-950">
+            <Section className="py-24 px-6 bg-zinc-950">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
                     <p className="text-zinc-400 text-center mb-12">Everything you need to know about our Shopify commerce services</p>
@@ -162,7 +163,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                         }
                     ]} />
                 </div>
-            </section>
+            </Section>
             {/* Footer */}
             <footer className="py-20 px-6 border-t border-zinc-900 text-center">
                 <div className="text-2xl font-black italic tracking-tighter mb-12">AGENCEY.</div>

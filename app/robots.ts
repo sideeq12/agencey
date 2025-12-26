@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://agency.com/sitemap.xml',
+        sitemap: 'https://agencey.pro/sitemap.xml',
     };
 }
