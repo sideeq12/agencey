@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
 
       <meta name="google-site-verification" content="iRV9eKvURqQCv5r60PCkOKWXjw6ESLVAeJijlEF2aOM" />
       <body

@@ -25,11 +25,11 @@ export const Accordion: React.FC<AccordionProps> = ({ items }) => {
             {items.map((item, index) => (
                 <div
                     key={index}
-                    className="border border-zinc-800 rounded-lg overflow-hidden bg-zinc-900/50"
+                    className="border border-zinc-200 rounded-lg overflow-hidden bg-white"
                 >
                     <button
                         onClick={() => toggleAccordion(index)}
-                        className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-zinc-800/50 transition-colors"
+                        className="w-full px-6 py-4 flex justify-between items-center text-left hover:bg-zinc-50 transition-colors"
                     >
                         <span className="font-semibold text-lg pr-4">{item.question}</span>
                         <FiChevronDown
@@ -46,7 +46,7 @@ export const Accordion: React.FC<AccordionProps> = ({ items }) => {
                                 transition={{ duration: 0.3 }}
                                 className="overflow-hidden"
                             >
-                                <div className="px-6 py-4 text-zinc-400 leading-relaxed border-t border-zinc-800">
+                                <div className="px-6 py-4 text-zinc-600 leading-relaxed border-t border-zinc-200">
                                     {item.answer}
                                 </div>
                             </motion.div>

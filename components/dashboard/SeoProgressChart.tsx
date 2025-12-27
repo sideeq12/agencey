@@ -19,11 +19,11 @@ export function SeoProgressChart() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-yellow-500/30 transition-colors"
+            className="w-full bg-white rounded-3xl border border-zinc-200 p-8 hover:border-yellow-500/30 hover:shadow-lg transition-all"
         >
             <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">SEO Campaign Velocity</h3>
-                <p className="text-zinc-400 text-sm">Organic traffic & keyword ranking growth over 6 months</p>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">SEO Campaign Velocity</h3>
+                <p className="text-zinc-600 text-sm">Organic traffic & keyword ranking growth over 6 months</p>
             </div>
 
             <div className="h-[400px]">
@@ -39,12 +39,12 @@ export function SeoProgressChart() {
                                 <stop offset="95%" stopColor="#eab308" stopOpacity={0} />
                             </linearGradient>
                         </defs>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" vertical={false} />
                         <XAxis dataKey="month" stroke="#52525b" axisLine={false} tickLine={false} />
                         <YAxis stroke="#52525b" axisLine={false} tickLine={false} />
                         <Tooltip
-                            contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '12px' }}
-                            itemStyle={{ color: '#fff' }}
+                            contentStyle={{ backgroundColor: '#fff', borderColor: '#e4e4e7', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)', color: '#18181b' }}
+                            itemStyle={{ color: '#18181b' }}
                         />
                         <Area type="monotone" dataKey="organic" name="Organic Traffic" stroke="#3b82f6" fillOpacity={1} fill="url(#colorOrganic)" strokeWidth={3} />
                         <Area type="monotone" dataKey="keywords" name="Ranked Keywords" stroke="#eab308" fillOpacity={1} fill="url(#colorKeywords)" strokeWidth={3} />

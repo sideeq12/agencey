@@ -22,8 +22,8 @@ export const HeroBackground: React.FC<HeroBackgroundProps> = ({
                 sizes="100vw"
             />
 
-            {/* Top Gradient Only for text readability (removed bottom gradients) */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent" />
+            {/* Subtle gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
 
             {/* Radial gradient very subtle */}
             <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-black/20 opacity-20" />

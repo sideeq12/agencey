@@ -38,13 +38,13 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
     };
 
     return (
-        <div className="min-h-screen bg-zinc-950 text-white">
+        <div className="min-h-screen bg-white text-zinc-900">
             <SeoHead title={data.title} description={data.description} />
             <JsonLd data={schema} />
 
             <header className="pt-20 pb-12 px-6 relative overflow-hidden">
                 <HeroBackground backgroundImage="/team3.jpg" />
-                <div className="max-w-5xl mx-auto bg-white dark:bg-zinc-900 rounded-[40px] p-12 md:p-20 shadow-xl border border-zinc-100 dark:border-zinc-800 relative z-10">
+                <div className="max-w-5xl mx-auto bg-white rounded-[40px] p-12 md:p-20 shadow-xl border border-zinc-200 relative z-10">
                     <div className="flex flex-col md:flex-row items-center gap-12">
                         <div className="flex-1 space-y-8 text-center md:text-left">
                             <motion.div
@@ -55,10 +55,10 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                                 <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
                                     WordPress Ecosystem Experts
                                 </div>
-                                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1] text-zinc-900 dark:text-zinc-50 mb-6">
+                                <h1 className="text-4xl md:text-6xl font-black tracking-tight leading-[1] text-zinc-900 mb-6">
                                     {data.title}
                                 </h1>
-                                <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-xl mb-8">
+                                <p className="text-lg md:text-xl text-zinc-600 leading-relaxed max-w-xl mb-8">
                                     {data.description}
                                 </p>
                                 <div className="flex flex-wrap gap-4 justify-center md:justify-start">
@@ -69,7 +69,7 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                                 </div>
                             </motion.div>
                         </div>
-                        <div className="w-full md:w-80 p-8 bg-zinc-800/50 rounded-3xl border border-zinc-700">
+                        <div className="w-full md:w-80 p-8 bg-zinc-100 rounded-3xl border border-zinc-200">
                             <h3 className="font-bold text-center mb-6">Free Resource</h3>
                             <ImagePlaceholder text="WP Speed E-book" aspect="square" className="mb-6" />
                             <Button variant="secondary" className="w-full">See How It Works</Button>
@@ -80,9 +80,9 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
 
             <Section className="py-20 px-6 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
                 <div className="lg:col-span-8 space-y-12">
-                    <div className="prose prose-invert max-w-none">
+                    <div className="prose prose-zinc max-w-none">
                         <h2 className="text-3xl font-bold mb-6">Unlocking WordPress Potential</h2>
-                        <p className="text-lg text-zinc-400">
+                        <p className="text-lg text-zinc-600">
                             We specialize in {data.primary_keyword} using modern development practices. No bloated themes, no unnecessary plugins. Just high-performance, scalable WordPress solutions.
                         </p>
                     </div>
@@ -90,11 +90,11 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                     <ImagePlaceholder text="Custom WordPress Dashboard" />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
+                        <div className="p-8 rounded-3xl bg-white border border-zinc-200 shadow-md">
                             <h4 className="font-bold mb-2">Vulnerability Protection</h4>
                             <p className="text-sm text-zinc-500">Enterprise-grade security patches and proactive monitoring.</p>
                         </div>
-                        <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800">
+                        <div className="p-8 rounded-3xl bg-white border border-zinc-200 shadow-md">
                             <h4 className="font-bold mb-2">Asset Optimization</h4>
                             <p className="text-sm text-zinc-500">Customized caching and CDN integration for {"< 1s"} load times.</p>
                         </div>
@@ -102,7 +102,7 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
                 </div>
 
                 <aside className="lg:col-span-4">
-                    <div className="p-8 rounded-3xl bg-zinc-900 border border-zinc-800 shadow-lg">
+                    <div className="p-8 rounded-3xl bg-white border border-zinc-200 shadow-xl">
                         <h3 className="text-xl font-bold mb-6">Start Your Project</h3>
                         <LeadForm service="wordpress" source={data.slug} />
                     </div>
@@ -110,11 +110,11 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
             </Section>
 
             {/* Performance Metrics */}
-            <Section className="py-24 px-6 border-y border-zinc-900 bg-zinc-950/30">
+            <Section className="py-24 px-6 border-y border-zinc-200 bg-zinc-50">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl font-bold mb-4">Optimized for Growth</h2>
-                        <p className="text-zinc-400">See the impact of a properly architected WordPress build.</p>
+                        <p className="text-zinc-600">See the impact of a properly architected WordPress build.</p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <PerformanceComparisonChart />
@@ -124,10 +124,10 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
             </Section>
 
             {/* FAQ Section */}
-            <Section className="py-24 px-6">
+            <Section className="py-24 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-                    <p className="text-zinc-400 text-center mb-12">Everything you need to know about our WordPress services</p>
+                    <p className="text-zinc-600 text-center mb-12">Everything you need to know about our WordPress services</p>
                     <Accordion items={[
                         {
                             question: "Is WordPress the right choice for my business?",
@@ -166,13 +166,13 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
             </Section>
 
             {/* Conversion Section */}
-            <footer className="py-12 border-t border-zinc-800 bg-zinc-950">
+            <footer className="py-12 border-t border-zinc-200 bg-white">
                 <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
                     <p className="text-zinc-500 text-sm">© 2025 AGENCEY WordPress Department</p>
                     <div className="flex gap-6">
                         <a href="/wordpress" className="text-sm font-bold text-blue-600">WordPress Hub</a>
-                        <a href="/webflow" className="text-sm text-zinc-400 hover:text-white">Webflow Services</a>
-                        <a href="/" className="text-sm text-zinc-400 hover:text-white">Home</a>
+                        <a href="/webflow" className="text-sm text-zinc-500 hover:text-black">Webflow Services</a>
+                        <a href="/" className="text-sm text-zinc-500 hover:text-black">Home</a>
                     </div>
                 </div>
             </footer>

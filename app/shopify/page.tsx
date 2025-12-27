@@ -15,7 +15,7 @@ import { MarketingFunnelChart } from "@/components/dashboard/MarketingFunnelChar
 
 export default function ShopifyHub() {
     return (
-        <div className="min-h-screen bg-black text-white px-6">
+        <div className="min-h-screen bg-white text-zinc-900 px-6">
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden text-center">
                 <HeroBackground backgroundImage="/team4.jpg" />
@@ -31,7 +31,7 @@ export default function ShopifyHub() {
                         <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase mb-12">
                             High-Converting Shopify Stores<br />Built to Scale Sales.
                         </h1>
-                        <p className="text-xl md:text-3xl text-zinc-400 max-w-4xl mx-auto font-medium leading-relaxed mb-16">
+                        <p className="text-xl md:text-3xl text-zinc-600 max-w-4xl mx-auto font-medium leading-relaxed mb-16">
                             We build fast, clean, conversion-focused Shopify stores that make it easy for customers to buy — and easy for you to manage and grow.
                         </p>
                         <Link href="#strategy">
@@ -44,22 +44,22 @@ export default function ShopifyHub() {
             </section>
 
             {/* Platform Sub-services / Pages */}
-            <Section className="py-24 border-t border-zinc-900 bg-zinc-950/50">
+            <Section className="py-24 border-t border-zinc-200 bg-zinc-50/50">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-500 text-center mb-16">E-commerce Authority Engineering</h2>
+                    <h2 className="text-[10px] font-bold uppercase tracking-[0.5em] text-zinc-600 text-center mb-16">E-commerce Authority Engineering</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
                         {pages.slice(0, 9).map((page, i) => (
                             <Link
                                 key={page.slug}
                                 href={`/shopify/${page.slug}`}
-                                className="group p-10 rounded-[40px] border border-zinc-800 hover:border-green-500/50 transition-all bg-black flex flex-col justify-between"
+                                className="group p-10 rounded-[40px] border border-zinc-200 hover:border-green-500/50 transition-all bg-white flex flex-col justify-between"
                             >
                                 <div>
-                                    <h2 className="text-2xl font-black italic tracking-tighter mb-4 uppercase group-hover:text-white transition-colors leading-none">{page.title}</h2>
-                                    <p className="text-zinc-500 text-sm mb-8 leading-relaxed font-medium line-clamp-2">{page.description}</p>
+                                    <h2 className="text-2xl font-black italic tracking-tighter mb-4 uppercase group-hover:text-zinc-900 transition-colors leading-none">{page.title}</h2>
+                                    <p className="text-zinc-600 text-sm mb-8 leading-relaxed font-medium line-clamp-2">{page.description}</p>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-zinc-700">Conversion Focused</span>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Conversion Focused</span>
                                     <span className="text-green-500 group-hover:translate-x-2 transition-transform">→</span>
                                 </div>
                             </Link>
@@ -71,11 +71,11 @@ export default function ShopifyHub() {
 
 
             {/* Performance Breakdown */}
-            <Section className="py-24 border-t border-zinc-900 bg-black">
+            <Section className="py-24 border-t border-zinc-200 bg-white">
                 <div className="max-w-7xl mx-auto">
                     <div className="mb-16 text-center">
                         <h2 className="text-4xl font-bold mb-4">E-Commerce Dominance</h2>
-                        <p className="text-zinc-400">Shopify stores optimized for maximum conversion.</p>
+                        <p className="text-zinc-600">Shopify stores optimized for maximum conversion.</p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                         <ServiceImpactChart />
@@ -85,10 +85,10 @@ export default function ShopifyHub() {
             </Section>
 
             {/* FAQ Section */}
-            <Section className="py-24 border-t border-zinc-900 bg-zinc-950">
+            <Section className="py-24 border-t border-zinc-200 bg-zinc-50">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-                    <p className="text-zinc-400 text-center mb-12">Everything you need to know about our Shopify commerce services</p>
+                    <p className="text-zinc-600 text-center mb-12">Everything you need to know about our Shopify commerce services</p>
                     <Accordion items={[
                         {
                             question: "Is Shopify the right choice for my business?",
@@ -127,9 +127,9 @@ export default function ShopifyHub() {
             </Section>
 
             {/* Strategy Section */}
-            <Section id="strategy" className="py-40 border-t border-zinc-900 bg-black">
+            <Section id="strategy" className="py-40 border-t border-zinc-200 bg-white">
                 <div className="max-w-7xl mx-auto">
-                    <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-16 rounded-[60px] shadow-2xl text-left">
+                    <div className="bg-zinc-50 border border-zinc-200 p-8 md:p-16 rounded-[60px] shadow-2xl text-left">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="space-y-8">
                                 <motion.div
@@ -140,7 +140,7 @@ export default function ShopifyHub() {
                                     <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter mb-6 uppercase leading-[0.9]">
                                         Scale My Business<br />Online.
                                     </h2>
-                                    <p className="text-zinc-400 leading-relaxed font-medium">
+                                    <p className="text-zinc-600 leading-relaxed font-medium">
                                         Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.
                                     </p>
                                 </motion.div>
@@ -152,18 +152,18 @@ export default function ShopifyHub() {
                                         { title: "Implementation", desc: "Expert guidance on how to execute effectively." }
                                     ].map((item, i) => (
                                         <div key={i} className="flex gap-4">
-                                            <div className="w-8 h-8 rounded-lg bg-black border border-zinc-800 flex items-center justify-center shrink-0">
-                                                <div className="w-1 h-1 rounded-full bg-white" />
+                                            <div className="w-8 h-8 rounded-lg bg-white border border-zinc-200 flex items-center justify-center shrink-0">
+                                                <div className="w-1 h-1 rounded-full bg-zinc-900" />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-white text-sm uppercase tracking-wider">{item.title}</h4>
-                                                <p className="text-xs text-zinc-500">{item.desc}</p>
+                                                <h4 className="font-bold text-zinc-900 text-sm uppercase tracking-wider">{item.title}</h4>
+                                                <p className="text-xs text-zinc-600">{item.desc}</p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
                             </div>
-                            <div className="bg-black/40 backdrop-blur-sm p-8 md:p-12 rounded-[40px] border border-zinc-800">
+                            <div className="bg-white/40 backdrop-blur-sm p-8 md:p-12 rounded-[40px] border border-zinc-200">
                                 <LeadForm service="shopify" source="shopify_hub" />
                             </div>
                         </div>

@@ -20,28 +20,28 @@ export function ClientGrowthChart() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-blue-500/30 transition-colors"
+            className="w-full bg-white rounded-3xl border border-zinc-200 p-8 hover:border-blue-500/30 hover:shadow-lg transition-all"
         >
             <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">90-Day Client Growth</h3>
-                <p className="text-zinc-400 text-sm">Average performance trajectory for new partners</p>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">90-Day Client Growth</h3>
+                <p className="text-zinc-600 text-sm">Average performance trajectory for new partners</p>
             </div>
 
             <div className="h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart data={data}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#333" vertical={false} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" vertical={false} />
                         <XAxis
                             dataKey="day"
-                            stroke="#666"
-                            tick={{ fill: '#888', fontSize: 12 }}
+                            stroke="#52525b"
+                            tick={{ fill: '#71717a', fontSize: 12 }}
                             axisLine={false}
                             tickLine={false}
                         />
                         <YAxis
                             yAxisId="left"
-                            stroke="#666"
-                            tick={{ fill: '#888', fontSize: 12 }}
+                            stroke="#52525b"
+                            tick={{ fill: '#71717a', fontSize: 12 }}
                             axisLine={false}
                             tickLine={false}
                             label={{ value: 'Traffic', angle: -90, position: 'insideLeft', fill: '#666' }}
@@ -49,15 +49,15 @@ export function ClientGrowthChart() {
                         <YAxis
                             yAxisId="right"
                             orientation="right"
-                            stroke="#666"
-                            tick={{ fill: '#888', fontSize: 12 }}
+                            stroke="#52525b"
+                            tick={{ fill: '#71717a', fontSize: 12 }}
                             axisLine={false}
                             tickLine={false}
                             label={{ value: 'Leads', angle: 90, position: 'insideRight', fill: '#666' }}
                         />
                         <Tooltip
-                            contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '12px', color: '#fff' }}
-                            itemStyle={{ color: '#fff' }}
+                            contentStyle={{ backgroundColor: '#fff', borderColor: '#e4e4e7', borderRadius: '12px', color: '#18181b', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                            itemStyle={{ color: '#18181b' }}
                         />
                         <Legend />
                         <Bar yAxisId="right" dataKey="leads" name="Leads Generated" fill="#8b5cf6" barSize={20} radius={[4, 4, 0, 0]} />

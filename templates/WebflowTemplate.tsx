@@ -38,7 +38,7 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white selection:bg-zinc-800 selection:text-white">
+        <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-200 selection:text-black">
             <SeoHead title={data.title} description={data.description} />
             <JsonLd data={schema} />
 
@@ -53,13 +53,13 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <div className="inline-block px-3 py-1 mb-8 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                        <div className="inline-block px-3 py-1 mb-8 rounded-full bg-zinc-100 border border-zinc-200 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
                             Premium Webflow Development
                         </div>
                         <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic">
                             {data.title}
                         </h1>
-                        <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
+                        <p className="text-xl md:text-3xl text-zinc-600 mb-12 max-w-3xl mx-auto leading-tight font-medium">
                             {data.description}
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -71,7 +71,7 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
             </header>
 
             {/* Feature Grid (Standardization) */}
-            <Section className="py-24 px-6 border-y border-zinc-900">
+            <Section className="py-24 px-6 border-y border-zinc-200">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
                     {[
                         { t: "Pixel Perfect", d: "We translate high-fidelity designs into fluid, responsive Webflow sites without compromise." },
@@ -81,17 +81,17 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                         { t: "Advanced Motion", d: "World-class Webflow interactions that breathe life into your brand experience." },
                         { t: "Lottie Integration", d: "Seamless SVG animations for interactive storytelling and data visualization." }
                     ].map((f, i) => (
-                        <div key={i} className="space-y-4 p-8 rounded-3xl bg-zinc-950 border border-zinc-900 hover:border-blue-500/30 transition-colors">
-                            <div className="w-8 h-8 rounded-lg bg-blue-500/20" />
+                        <div key={i} className="space-y-4 p-8 rounded-3xl bg-white border border-zinc-200 hover:border-blue-500/30 hover:shadow-lg transition-all">
+                            <div className="w-8 h-8 rounded-lg bg-blue-500/10" />
                             <h3 className="text-lg font-bold">{f.t}</h3>
-                            <p className="text-sm text-zinc-500 leading-relaxed">{f.d}</p>
+                            <p className="text-sm text-zinc-600 leading-relaxed">{f.d}</p>
                         </div>
                     ))}
                 </div>
             </Section>
 
             {/* Process Section */}
-            <Section className="py-24 px-6 bg-black">
+            <Section className="py-24 px-6 bg-zinc-50">
                 <div className="max-w-5xl mx-auto">
                     <h2 className="text-5xl font-black italic tracking-tighter mb-20 text-center uppercase">Our Build Protocol</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -102,10 +102,10 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                             { step: "04", title: "Optimization", desc: "Rigorous testing for performance, accessibility, and SEO integrity." }
                         ].map((s, i) => (
                             <div key={i} className="flex gap-8">
-                                <span className="text-4xl font-black text-zinc-800 italic">{s.step}</span>
+                                <span className="text-4xl font-black text-zinc-200 italic">{s.step}</span>
                                 <div>
                                     <h3 className="text-xl font-bold mb-2">{s.title}</h3>
-                                    <p className="text-zinc-500 text-sm leading-relaxed">{s.desc}</p>
+                                    <p className="text-zinc-600 text-sm leading-relaxed">{s.desc}</p>
                                 </div>
                             </div>
                         ))}
@@ -114,11 +114,11 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
             </Section>
 
             {/* Performance Dashboard */}
-            <Section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950/50">
+            <Section className="py-24 px-6 border-t border-zinc-200 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-black tracking-tighter mb-4 italic">Performance & Velocity</h2>
-                        <p className="text-zinc-400">Why leading brands switch to our Webflow stack.</p>
+                        <p className="text-zinc-600">Why leading brands switch to our Webflow stack.</p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <ServiceImpactChart />
@@ -128,14 +128,14 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
             </Section>
 
             {/* Testimonials */}
-            <Section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950">
+            <Section className="py-24 px-6 border-t border-zinc-200 bg-zinc-50">
                 <div className="max-w-6xl mx-auto">
-                    <div className="bg-black border border-zinc-900 rounded-[60px] p-12 md:p-24 text-center">
+                    <div className="bg-white border border-zinc-200 rounded-[60px] p-12 md:p-24 text-center shadow-xl">
                         <p className="text-2xl md:text-4xl font-black italic leading-tight mb-12">
                             "The transition to Webflow was seamless. We've seen a 40% increase in organic traffic within 3 months of launch."
                         </p>
                         <div className="flex items-center justify-center gap-4">
-                            <div className="w-12 h-12 rounded-full bg-zinc-900 border border-zinc-800" />
+                            <div className="w-12 h-12 rounded-full bg-zinc-100 border border-zinc-200" />
                             <div className="text-left">
                                 <p className="font-bold">Sarah Jenkins</p>
                                 <p className="text-xs text-zinc-500 tracking-widest uppercase">Head of Growth, NexaFlow</p>
@@ -146,10 +146,10 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
             </Section>
 
             {/* FAQ Section */}
-            <Section className="py-24 px-6 bg-zinc-950">
+            <Section className="py-24 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-                    <p className="text-zinc-400 text-center mb-12">Everything you need to know about our Webflow services</p>
+                    <p className="text-zinc-600 text-center mb-12">Everything you need to know about our Webflow services</p>
                     <Accordion items={[
                         {
                             question: "Is Webflow the right choice for my business?",
@@ -206,21 +206,22 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
                             ))}
                         </ul>
                     </div>
-                    <div className="p-10 rounded-[40px] bg-zinc-950 border border-zinc-900">
+                    <div className="p-10 rounded-[40px] bg-white border border-zinc-200 shadow-xl">
                         <LeadForm service="webflow" source={data.slug} />
                     </div>
                 </div>
             </Section>
 
             {/* Footer */}
-            <footer className="py-12 border-t border-zinc-900">
+
+            <footer className="py-12 border-t border-zinc-200">
                 <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="text-2xl font-black italic tracking-tighter">AGENCEY.</div>
                     <div className="flex gap-8 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
-                        <a href="/webflow" className="text-white">Webflow Hub</a>
-                        <a href="/wordpress" className="hover:text-white transition-colors">WordPress</a>
-                        <a href="/shopify" className="hover:text-white transition-colors">Shopify</a>
-                        <a href="/" className="hover:text-white transition-colors">Home</a>
+                        <a href="/webflow" className="text-black">Webflow Hub</a>
+                        <a href="/wordpress" className="hover:text-black transition-colors">WordPress</a>
+                        <a href="/shopify" className="hover:text-black transition-colors">Shopify</a>
+                        <a href="/" className="hover:text-black transition-colors">Home</a>
                     </div>
                 </div>
             </footer>

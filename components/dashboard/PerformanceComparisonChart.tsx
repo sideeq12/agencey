@@ -20,11 +20,11 @@ export function PerformanceComparisonChart() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-green-500/30 transition-colors"
+            className="w-full bg-white rounded-3xl border border-zinc-200 p-8 hover:border-green-500/30 hover:shadow-lg transition-all"
         >
             <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Before vs After Launch</h3>
-                <p className="text-zinc-400 text-sm">Impact on Core Web Vitals and Engagement</p>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">Before vs After Launch</h3>
+                <p className="text-zinc-600 text-sm">Impact on Core Web Vitals and Engagement</p>
             </div>
 
             <div className="h-[350px]">
@@ -35,24 +35,24 @@ export function PerformanceComparisonChart() {
                         margin={{ top: 5, right: 30, left: 40, bottom: 5 }}
                         barGap={2}
                     >
-                        <CartesianGrid strokeDasharray="3 3" stroke="#333" horizontal={true} vertical={false} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#e4e4e7" horizontal={true} vertical={false} />
                         <XAxis type="number" hide />
                         <YAxis
                             type="category"
                             dataKey="metric"
-                            stroke="#fff"
-                            tick={{ fill: '#e4e4e7', fontSize: 14, fontWeight: 600 }}
+                            stroke="#52525b"
+                            tick={{ fill: '#18181b', fontSize: 14, fontWeight: 600 }}
                             width={100}
                             axisLine={false}
                             tickLine={false}
                         />
                         <Tooltip
-                            cursor={{ fill: 'rgba(255,255,255,0.05)' }}
-                            contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '12px' }}
-                            itemStyle={{ color: '#fff' }}
+                            cursor={{ fill: 'rgba(0,0,0,0.05)' }}
+                            contentStyle={{ backgroundColor: '#fff', borderColor: '#e4e4e7', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+                            itemStyle={{ color: '#18181b' }}
                         />
                         <Legend iconType="circle" />
-                        <Bar dataKey="before" name="Previous Site" fill="#3f3f46" radius={[0, 4, 4, 0]} barSize={20} />
+                        <Bar dataKey="before" name="Previous Site" fill="#d4d4d8" radius={[0, 4, 4, 0]} barSize={20} />
                         <Bar dataKey="after" name="Agencey Build" fill="#22c55e" radius={[0, 4, 4, 0]} barSize={20} />
                     </BarChart>
                 </ResponsiveContainer>

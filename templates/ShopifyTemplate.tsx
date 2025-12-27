@@ -38,7 +38,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white selection:bg-green-500 selection:text-black">
+        <div className="min-h-screen bg-white text-zinc-900 selection:bg-green-500 selection:text-white">
             <SeoHead title={data.title} description={data.description} />
             <JsonLd data={schema} />
 
@@ -58,7 +58,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                         <h1 className="text-4xl md:text-5xl font-black tracking-tighter mb-8 leading-[0.9] italic uppercase">
                             {data.title}
                         </h1>
-                        <p className="text-xl md:text-3xl text-zinc-400 mb-12 max-w-3xl mx-auto leading-tight font-medium">
+                        <p className="text-xl md:text-3xl text-zinc-600 mb-12 max-w-3xl mx-auto leading-tight font-medium">
                             {data.description}
                         </p>
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
@@ -74,7 +74,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             </header>
 
             {/* Feature Grid */}
-            <Section className="py-24 px-6 border-y border-zinc-900 bg-zinc-950">
+            <Section className="py-24 px-6 border-y border-zinc-200 bg-zinc-50">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {[
                         { h: "Headless Commerce", p: "Vercel + Hydrogen implementations for instant load times." },
@@ -94,7 +94,7 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             </Section>
 
             {/* Methodology */}
-            <Section className="py-32 px-6 bg-black" id="roi">
+            <Section className="py-32 px-6 bg-white" id="roi">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-5xl font-black italic mb-20 text-center tracking-tighter">THE CONVERSION ENGINE.</h2>
                     <div className="grid grid-cols-1 gap-12">
@@ -104,11 +104,11 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                             { t: "Performance Ops", d: "Rigorous Liquid optimization to reduce server response times by 60%." },
                             { t: "Scale Testing", d: "Simulating peak traffic scenarios to ensure stability during major sales." }
                         ].map((m, i) => (
-                            <div key={i} className="group p-10 rounded-[40px] border border-zinc-900 hover:bg-zinc-950 transition-all flex flex-col md:flex-row gap-8 items-center">
+                            <div key={i} className="group p-10 rounded-[40px] border border-zinc-200 hover:bg-zinc-50 transition-all flex flex-col md:flex-row gap-8 items-center">
                                 <div className="text-4xl font-black text-zinc-900 group-hover:text-green-500 transition-colors">STEP {i + 1}</div>
                                 <div>
                                     <h3 className="text-2xl font-bold mb-2">{m.t}</h3>
-                                    <p className="text-zinc-400 text-sm">{m.d}</p>
+                                    <p className="text-zinc-600 text-sm">{m.d}</p>
                                 </div>
                             </div>
                         ))}
@@ -117,11 +117,11 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             </Section>
 
             {/* Performance Charts */}
-            <Section className="py-24 px-6 border-t border-zinc-900 bg-zinc-950/50">
+            <Section className="py-24 px-6 border-t border-zinc-200 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-4xl font-black tracking-tighter mb-4 italic">Revenue & ROI</h2>
-                        <p className="text-zinc-400">Track every dollar from click to checkout.</p>
+                        <p className="text-zinc-600">Track every dollar from click to checkout.</p>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <MarketingFunnelChart />
@@ -131,17 +131,17 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             </Section>
 
             {/* Testimonial / Proof */}
-            <Section className="py-32 px-6 border-t border-zinc-900">
+            <Section className="py-32 px-6 border-t border-zinc-200">
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
                     <div className="space-y-8">
                         <p className="text-[10px] font-black uppercase tracking-[0.5em] text-green-500">Case Study: Fashion Brand X</p>
                         <h2 className="text-4xl md:text-6xl font-black italic tracking-tighter">2.4x Increase in ROI.</h2>
-                        <p className="text-zinc-400 text-lg leading-relaxed">
+                        <p className="text-zinc-600 text-lg leading-relaxed">
                             "Moving from a legacy Shopify theme to a modular, performance-engineered site was the best decision for our Q4 growth."
                         </p>
                         <ImagePlaceholder text="Dashboard Metrics Performance" aspect="video" className="shadow-2xl shadow-green-500/10" />
                     </div>
-                    <div className="bg-zinc-950 p-12 md:p-16 rounded-[60px] border border-zinc-900">
+                    <div className="bg-zinc-100 p-12 md:p-16 rounded-[60px] border border-zinc-200">
                         <h3 className="text-3xl font-bold mb-8 text-center uppercase tracking-widest italic">Scale Today.</h3>
                         <LeadForm service="shopify" source={data.slug} />
                     </div>
@@ -149,10 +149,10 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
             </Section>
 
             {/* FAQ Section */}
-            <Section className="py-24 px-6 bg-zinc-950">
+            <Section className="py-24 px-6 bg-white">
                 <div className="max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-5xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-                    <p className="text-zinc-400 text-center mb-12">Everything you need to know about our Shopify commerce services</p>
+                    <p className="text-zinc-600 text-center mb-12">Everything you need to know about our Shopify commerce services</p>
                     <Accordion items={[
                         {
                             question: "Is Shopify the right choice for my business?",
@@ -190,13 +190,13 @@ export const ShopifyTemplate: React.FC<ShopifyTemplateProps> = ({ data }) => {
                 </div>
             </Section>
             {/* Footer */}
-            <footer className="py-20 px-6 border-t border-zinc-900 text-center">
+            <footer className="py-20 px-6 border-t border-zinc-200 text-center">
                 <div className="text-2xl font-black italic tracking-tighter mb-12">AGENCEY.</div>
                 <div className="flex justify-center gap-12 text-[10px] font-black uppercase tracking-[0.3em] text-zinc-600">
-                    <a href="/shopify" className="text-white hover:text-green-500">Shopify Hub</a>
-                    <a href="/webflow" className="hover:text-white transition-colors">Webflow</a>
-                    <a href="/wordpress" className="hover:text-white transition-colors">WordPress</a>
-                    <a href="/" className="hover:text-white transition-colors">Home</a>
+                    <a href="/shopify" className="text-green-600 hover:text-green-500">Shopify Hub</a>
+                    <a href="/webflow" className="hover:text-black transition-colors">Webflow</a>
+                    <a href="/wordpress" className="hover:text-black transition-colors">WordPress</a>
+                    <a href="/" className="hover:text-black transition-colors">Home</a>
                 </div>
             </footer>
         </div>

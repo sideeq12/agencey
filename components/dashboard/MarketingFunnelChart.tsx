@@ -16,11 +16,11 @@ export function MarketingFunnelChart() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-purple-500/30 transition-colors"
+            className="w-full bg-white rounded-3xl border border-zinc-200 p-8 hover:border-purple-500/30 hover:shadow-lg transition-all"
         >
             <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Conversion Funnel</h3>
-                <p className="text-zinc-400 text-sm">Optimized flow from traffic to revenue</p>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">Conversion Funnel</h3>
+                <p className="text-zinc-600 text-sm">Optimized flow from traffic to revenue</p>
             </div>
 
             <div className="h-[300px]">
@@ -35,18 +35,18 @@ export function MarketingFunnelChart() {
                         <YAxis
                             type="category"
                             dataKey="stage"
-                            stroke="#fff"
-                            tick={{ fill: '#e4e4e7', fontSize: 14, fontWeight: 600 }}
+                            stroke="#52525b"
+                            tick={{ fill: '#18181b', fontSize: 14, fontWeight: 600 }}
                             width={100}
                             axisLine={false}
                             tickLine={false}
                         />
                         <Tooltip
-                            cursor={{ fill: 'rgba(255,255,255,0.05)' }}
-                            contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '12px' }}
-                            itemStyle={{ color: '#fff' }}
+                            cursor={{ fill: 'rgba(0,0,0,0.05)' }}
+                            contentStyle={{ backgroundColor: '#fff', borderColor: '#e4e4e7', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)', color: '#18181b' }}
+                            itemStyle={{ color: '#18181b' }}
                         />
-                        <Bar dataKey="value" radius={[0, 20, 20, 0] as any} background={{ fill: '#27272a' }}>
+                        <Bar dataKey="value" radius={[0, 20, 20, 0] as any} background={{ fill: '#f4f4f5' }}>
                             {data.map((entry, index) => (
                                 <Cell key={`cell-${index}`} fill={entry.color} />
                             ))}

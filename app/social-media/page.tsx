@@ -9,7 +9,7 @@ import { HeroBackground } from "@/components/ui/HeroBackground";
 
 export default function SocialMediaPage() {
     return (
-        <div className="min-h-screen bg-black text-white px-6">
+        <div className="min-h-screen bg-white text-zinc-900 px-6">
             {/* Hero Section */}
             <section className="relative min-h-[90vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
                 <HeroBackground backgroundImage="/team4.jpg" />
@@ -25,7 +25,7 @@ export default function SocialMediaPage() {
                         <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter leading-[0.9] uppercase mb-12 text-center">
                             Social Media That Generates<br />Leads — Not Just Likes.
                         </h1>
-                        <p className="text-xl md:text-3xl text-zinc-400 max-w-4xl mx-auto font-medium leading-relaxed mb-16 text-center">
+                        <p className="text-xl md:text-3xl text-zinc-600 max-w-4xl mx-auto font-medium leading-relaxed mb-16 text-center">
                             We manage and optimize your social presence to attract the right audience, drive engagement, and turn attention into inbound leads.
                         </p>
                         <div className="flex justify-center mb-20">
@@ -45,9 +45,9 @@ export default function SocialMediaPage() {
                                 "UGC Sourcing",
                                 "ROAS Optimization"
                             ].map((item) => (
-                                <div key={item} className="flex flex-col gap-3 p-6 bg-zinc-900/50 border border-zinc-800 rounded-2xl hover:border-purple-500/50 transition-all group">
+                                <div key={item} className="flex flex-col gap-3 p-6 bg-zinc-100/50 border border-zinc-200 rounded-2xl hover:border-purple-500/50 transition-all group">
                                     <FiCheckCircle className="text-purple-500 text-xl" />
-                                    <span className="font-bold text-[10px] uppercase tracking-widest text-zinc-400 group-hover:text-white">{item}</span>
+                                    <span className="font-bold text-[10px] uppercase tracking-widest text-zinc-600 group-hover:text-zinc-900">{item}</span>
                                 </div>
                             ))}
                         </div>
@@ -56,9 +56,9 @@ export default function SocialMediaPage() {
             </section>
 
             {/* Strategy Section */}
-            <section className="py-40 border-t border-zinc-900">
+            <section className="py-40 border-t border-zinc-200">
                 <div className="max-w-7xl mx-auto">
-                    <div className="bg-zinc-900 border border-zinc-800 p-8 md:p-16 rounded-[60px] shadow-2xl text-left">
+                    <div className="bg-zinc-50 border border-zinc-200 p-8 md:p-16 rounded-[60px] shadow-2xl text-left">
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                             <div className="space-y-8">
                                 <motion.div
@@ -69,7 +69,7 @@ export default function SocialMediaPage() {
                                     <h2 className="text-3xl md:text-4xl font-black italic tracking-tighter mb-6 uppercase leading-[0.9]">
                                         Turn Clicks Into<br />Customers.
                                     </h2>
-                                    <p className="text-zinc-400 leading-relaxed font-medium">
+                                    <p className="text-zinc-600 leading-relaxed font-medium">
                                         Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.
                                     </p>
                                 </motion.div>
@@ -88,12 +88,12 @@ export default function SocialMediaPage() {
                                             transition={{ delay: i * 0.1 }}
                                             className="flex gap-4"
                                         >
-                                            <div className="w-8 h-8 rounded-lg bg-black border border-zinc-800 flex items-center justify-center shrink-0">
-                                                <div className="w-1 h-1 rounded-full bg-white" />
+                                            <div className="w-8 h-8 rounded-lg bg-white border border-zinc-200 flex items-center justify-center shrink-0">
+                                                <div className="w-1 h-1 rounded-full bg-zinc-900" />
                                             </div>
                                             <div>
-                                                <h4 className="font-bold text-white text-sm uppercase tracking-wider">{item.title}</h4>
-                                                <p className="text-xs text-zinc-500">{item.desc}</p>
+                                                <h4 className="font-bold text-zinc-900 text-sm uppercase tracking-wider">{item.title}</h4>
+                                                <p className="text-xs text-zinc-600">{item.desc}</p>
                                             </div>
                                         </motion.div>
                                     ))}
@@ -103,7 +103,7 @@ export default function SocialMediaPage() {
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
-                                className="bg-black/40 backdrop-blur-sm p-8 md:p-12 rounded-[40px] border border-zinc-800"
+                                className="bg-white/40 backdrop-blur-sm p-8 md:p-12 rounded-[40px] border border-zinc-200"
                             >
                                 <LeadForm service="social-media" source="social_landing" />
                             </motion.div>

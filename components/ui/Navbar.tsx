@@ -23,12 +23,11 @@ export const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-zinc-800/50">
+        <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200/50">
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                <Link href="/" className="text-2xl font-bold">Agencey</Link>
+                <Link href="/" className="text-2xl font-bold text-black">Agencey</Link>
                 <div className="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-widest items-center">
-                    <Link href="/" className="text-zinc-400 hover:text-white transition-colors">Home</Link>
-                    <Link href="/services" className="text-zinc-400 hover:text-white transition-colors">Services</Link>
+                    <Link href="/services" className="text-zinc-600 hover:text-zinc-900 transition-colors">Services</Link>
 
                     {/* Website Development Dropdown */}
                     <div
@@ -36,7 +35,7 @@ export const Navbar = () => {
                         onMouseEnter={() => setIsDevOpen(true)}
                         onMouseLeave={() => setIsDevOpen(false)}
                     >
-                        <button className="text-zinc-400 hover:text-white transition-colors h-10 flex items-center gap-1">
+                        <button className="text-zinc-600 hover:text-zinc-900 transition-colors h-10 flex items-center gap-1">
                             Website Development
                             <FiChevronDown className={`text-xs transition-transform ${isDevOpen ? 'rotate-180' : ''}`} />
                         </button>
@@ -45,7 +44,7 @@ export const Navbar = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="absolute top-full left-0 mt-0 w-64 bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl overflow-hidden p-2"
+                                className="absolute top-full left-0 mt-0 w-64 bg-zinc-50 border border-zinc-200 rounded-xl shadow-2xl overflow-hidden p-2"
                             >
                                 <div className="space-y-1">
                                     {devPlatforms.map((item) => {
@@ -54,14 +53,14 @@ export const Navbar = () => {
                                             <Link
                                                 key={item.title}
                                                 href={item.href}
-                                                className="flex items-center gap-3 px-3 py-2 hover:bg-zinc-800/50 rounded-lg transition-colors group"
+                                                className="flex items-center gap-3 px-3 py-2 hover:bg-zinc-100/50 rounded-lg transition-colors group"
                                             >
-                                                <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center group-hover:bg-white transition-colors">
-                                                    <Icon className="text-zinc-400 group-hover:text-black transition-colors" />
+                                                <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center group-hover:bg-zinc-900 transition-colors">
+                                                    <Icon className="text-zinc-600 group-hover:text-white transition-colors" />
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold text-zinc-200 group-hover:text-white text-[10px]">{item.title}</div>
-                                                    <div className="text-[9px] text-zinc-500 group-hover:text-zinc-400">{item.desc}</div>
+                                                    <div className="font-bold text-zinc-800 group-hover:text-zinc-900 text-[10px]">{item.title}</div>
+                                                    <div className="text-[9px] text-zinc-600 group-hover:text-zinc-500">{item.desc}</div>
                                                 </div>
                                             </Link>
                                         );
@@ -77,7 +76,7 @@ export const Navbar = () => {
                         onMouseEnter={() => setIsSearchOpen(true)}
                         onMouseLeave={() => setIsSearchOpen(false)}
                     >
-                        <button className="text-zinc-400 hover:text-white transition-colors h-10 flex items-center gap-1 text-[10px]">
+                        <button className="text-zinc-600 hover:text-zinc-900 transition-colors h-10 flex items-center gap-1 text-[10px]">
                             Growth & Marketing
                             <FiChevronDown className={`text-xs transition-transform ${isSearchOpen ? 'rotate-180' : ''}`} />
                         </button>
@@ -86,7 +85,7 @@ export const Navbar = () => {
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="absolute top-full left-0 mt-0 w-72 bg-zinc-900 border border-zinc-800 rounded-xl shadow-2xl overflow-hidden p-2"
+                                className="absolute top-full left-0 mt-0 w-72 bg-zinc-50 border border-zinc-200 rounded-xl shadow-2xl overflow-hidden p-2"
                             >
                                 <div className="space-y-1">
                                     {searchServices.map((item) => {
@@ -95,14 +94,14 @@ export const Navbar = () => {
                                             <Link
                                                 key={item.title}
                                                 href={item.href}
-                                                className="flex items-center gap-3 px-3 py-2 hover:bg-zinc-800/50 rounded-lg transition-colors group"
+                                                className="flex items-center gap-3 px-3 py-2 hover:bg-zinc-100/50 rounded-lg transition-colors group"
                                             >
-                                                <div className="w-8 h-8 rounded-lg bg-zinc-800 flex items-center justify-center group-hover:bg-white transition-colors">
-                                                    <Icon className="text-zinc-400 group-hover:text-black transition-colors" />
+                                                <div className="w-8 h-8 rounded-lg bg-zinc-100 flex items-center justify-center group-hover:bg-zinc-900 transition-colors">
+                                                    <Icon className="text-zinc-600 group-hover:text-white transition-colors" />
                                                 </div>
                                                 <div>
-                                                    <div className="font-bold text-zinc-200 group-hover:text-white text-[10px]">{item.title}</div>
-                                                    <div className="text-[9px] text-zinc-500 group-hover:text-zinc-400">{item.desc}</div>
+                                                    <div className="font-bold text-zinc-800 group-hover:text-zinc-900 text-[10px]">{item.title}</div>
+                                                    <div className="text-[9px] text-zinc-600 group-hover:text-zinc-500">{item.desc}</div>
                                                 </div>
                                             </Link>
                                         );
@@ -112,8 +111,8 @@ export const Navbar = () => {
                         )}
                     </div>
 
-                    <Link href="/design" className="text-zinc-400 hover:text-white transition-colors">Graphic Design</Link>
-                    <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">Contact</Link>
+                    <Link href="/design" className="text-zinc-600 hover:text-zinc-900 transition-colors">Graphic Design</Link>
+                    <Link href="/contact" className="text-zinc-600 hover:text-zinc-900 transition-colors">Contact</Link>
                 </div>
                 <Link href="/contact">
                     <Button size="sm" className="hidden md:block">Start Your Project</Button>

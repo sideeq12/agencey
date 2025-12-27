@@ -85,8 +85,8 @@ export function GrowthChart() {
                             contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '12px', color: '#fff', boxShadow: '0 10px 30px -10px rgba(0,0,0,0.5)' }}
                             itemStyle={{ color: '#fff' }}
                             labelStyle={{ color: '#a1a1aa', marginBottom: '8px' }}
-                            formatter={(value: number, name: string) => [
-                                `$${value.toLocaleString()}`, 
+                            formatter={(value: number | undefined, name: string | undefined) => [
+                                value ? `$${value.toLocaleString()}` : '$0',
                                 name === 'after' ? 'With Us' : 'Before'
                             ]}
                         />

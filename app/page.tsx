@@ -23,7 +23,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-white">
+    <div className="min-h-screen bg-white text-zinc-900">
       {/* 1. Hero Section */}
       <header className="relative px-6 pt-32 pb-24 min-h-[80vh] flex items-center justify-center overflow-hidden">
         <HeroBackground />
@@ -33,13 +33,13 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="max-w-6xl mx-auto text-center relative z-10"
         >
-          <div className="inline-block px-4 py-2 mb-8 rounded-full bg-zinc-900/50 border border-zinc-800 text-xs font-semibold uppercase tracking-wider text-zinc-400">
+          <div className="inline-block px-4 py-2 mb-8 rounded-full bg-zinc-100 border border-zinc-200 text-xs font-semibold uppercase tracking-wider text-zinc-600">
             Strategic Growth Unit
           </div>
           <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter mb-8 leading-[0.9] uppercase">
             Websites & Marketing Systems<br />That Bring You Qualified Leads.
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-400 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
+          <p className="text-xl md:text-2xl text-zinc-600 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
             We design, build, and optimize websites and digital systems that turn traffic into real business opportunities — not just clicks.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -48,7 +48,7 @@ export default function Home() {
                 <span className="group-hover:translate-x-1 transition-transform inline-block">Get a Free Strategy Session</span>
               </Button>
             </Link>
-            <Link href="#growth" className="text-zinc-500 hover:text-white font-bold uppercase tracking-widest text-xs transition-colors">
+            <Link href="#growth" className="text-zinc-500 hover:text-black font-bold uppercase tracking-widest text-xs transition-colors">
               See How It Works
             </Link>
           </div>
@@ -56,7 +56,7 @@ export default function Home() {
       </header>
 
       {/* 2. Trust Bar */}
-      <Section className="py-16 border-y border-zinc-900/50">
+      <Section className="py-16 border-y border-zinc-100">
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-xs font-semibold uppercase tracking-wider text-center mb-10 text-zinc-500">Trusted by Leading Companies</p>
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40">
@@ -67,7 +67,7 @@ export default function Home() {
             <div className="text-xl font-bold">QUANTUM</div>
           </div>
           <div className="mt-10 text-center">
-            <Link href="#contact" className="text-sm font-semibold text-zinc-500 hover:text-white transition-colors border-b border-transparent hover:border-white pb-0.5">
+            <Link href="#contact" className="text-sm font-semibold text-zinc-500 hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">
               See Why Clients Trust Us
             </Link>
           </div>
@@ -79,7 +79,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
-            <p className="text-zinc-400">Expert solutions across four powerful platforms</p>
+            <p className="text-zinc-500">Expert solutions across four powerful platforms</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, index) => {
@@ -89,12 +89,12 @@ export default function Home() {
                   <motion.div
                     // Use a slightly different animation logic here since it's inside a Section that already reveals
                     // Or keep the stagger effect as "children" variants if we were nesting, but keep it simple for now and rely on hover
-                    className={`p-8 rounded-2xl bg-gradient-to-br ${service.color} border border-zinc-800/50 hover:border-zinc-700 transition-all duration-300 h-full flex flex-col`}
+                    className={`p-8 rounded-2xl bg-white border border-zinc-200 hover:border-zinc-300 hover:shadow-lg transition-all duration-300 h-full flex flex-col`}
                   >
-                    <Icon className="text-4xl mb-4 text-zinc-300 group-hover:text-white transition-colors" />
+                    <Icon className="text-4xl mb-4 text-zinc-400 group-hover:text-black transition-colors" />
                     <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-zinc-400 text-sm mb-6 flex-grow">{service.desc}</p>
-                    <div className="flex items-center text-sm font-semibold text-zinc-300 group-hover:text-white transition-colors">
+                    <p className="text-zinc-500 text-sm mb-6 flex-grow">{service.desc}</p>
+                    <div className="flex items-center text-sm font-semibold text-zinc-400 group-hover:text-black transition-colors">
                       Explore <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </motion.div>
@@ -105,8 +105,7 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* 4. Methodology (The Protocol) */}
-      <Section className="py-24 px-6 bg-zinc-950/50">
+      <Section className="py-24 px-6 bg-zinc-50">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">The Protocol</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -117,10 +116,10 @@ export default function Home() {
               { step: "04", title: "Conversion Loop", desc: "Continuous mapping of user behavior to refine CTR and lead quality." }
             ].map((s, i) => (
               <div key={i} className="flex gap-6">
-                <span className="text-4xl font-bold text-zinc-800">{s.step}</span>
+                <span className="text-4xl font-bold text-zinc-200">{s.step}</span>
                 <div className="space-y-2">
                   <h3 className="text-xl font-bold">{s.title}</h3>
-                  <p className="text-zinc-400 leading-relaxed">{s.desc}</p>
+                  <p className="text-zinc-600 leading-relaxed">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -129,14 +128,14 @@ export default function Home() {
           <div className="mt-24">
             <div className="mb-12 text-center">
               <h3 className="text-2xl font-bold mb-4">Accelerated Delivery</h3>
-              <p className="text-zinc-400">From kickoff to launch in weeks, not months.</p>
+              <p className="text-zinc-600">From kickoff to launch in weeks, not months.</p>
             </div>
             <ProjectTimelineChart />
           </div>
 
           <div className="mt-16 text-center">
             <Link href="#contact">
-              <Button variant="outline" size="lg" className="border-zinc-700 hover:bg-zinc-900 group">
+              <Button variant="outline" size="lg" className="border-zinc-300 hover:bg-zinc-100 group">
                 Start Your Project <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -145,13 +144,13 @@ export default function Home() {
       </Section>
 
       {/* 5. Growth & Scale Architecture */}
-      <Section className="py-32 px-6 bg-black">
+      <Section className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-8 uppercase leading-[0.9]">
               Growth & Scale<br />Architecture.
             </h2>
-            <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+            <p className="text-xl text-zinc-600 max-w-2xl mx-auto font-medium leading-relaxed">
               We combine cutting-edge AI technology with proven marketing strategies to deliver results that scale your business.
             </p>
           </div>
@@ -207,22 +206,22 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group p-8 rounded-[40px] bg-zinc-950 border border-zinc-900 hover:border-white/20 transition-all duration-500 relative overflow-hidden"
+                className="group p-8 rounded-[40px] bg-white border border-zinc-200 hover:border-zinc-300 hover:shadow-xl transition-all duration-500 relative overflow-hidden"
               >
-                <div className={`w-12 h-12 rounded-2xl bg-zinc-900 flex items-center justify-center mb-8 border border-zinc-800 group-hover:border-${service.color}-500/50 group-hover:bg-${service.color}-500/10 transition-colors`}>
-                  <service.icon className={`text-xl text-zinc-500 group-hover:text-white transition-colors`} />
+                <div className={`w-12 h-12 rounded-2xl bg-zinc-50 flex items-center justify-center mb-8 border border-zinc-200 group-hover:border-${service.color}-500/50 group-hover:bg-${service.color}-500/10 transition-colors`}>
+                  <service.icon className={`text-xl text-zinc-500 group-hover:text-black transition-colors`} />
                 </div>
-                <h3 className="text-2xl font-black italic tracking-tighter mb-4 uppercase leading-none group-hover:text-white transition-colors">
+                <h3 className="text-2xl font-black italic tracking-tighter mb-4 uppercase leading-none group-hover:text-black transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-sm text-zinc-400 mb-8 leading-relaxed">
+                <p className="text-sm text-zinc-600 mb-8 leading-relaxed">
                   {service.desc}
                 </p>
                 <div className="space-y-3">
                   {service.items.map((item, idx) => (
                     <div key={idx} className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-800 group-hover:bg-white transition-colors" />
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-zinc-300 transition-colors">
+                      <div className="w-1.5 h-1.5 rounded-full bg-zinc-200 group-hover:bg-black transition-colors" />
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 group-hover:text-zinc-700 transition-colors">
                         {item}
                       </span>
                     </div>
@@ -238,7 +237,7 @@ export default function Home() {
       <Section className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-12">Why Agencey?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-12">Why High-Growth Teams Choose Us</h2>
             <div className="space-y-8">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -248,7 +247,7 @@ export default function Home() {
                 className="border-l-4 border-blue-500 pl-6"
               >
                 <h4 className="text-xl font-bold mb-2">Radical Focus</h4>
-                <p className="text-zinc-400">We don't do generalists. Each engineer is a master of their specific vertical.</p>
+                <p className="text-zinc-600">We don&apos;t do generalists. Every project is handled by specialists who live and breathe their craft — design, development, SEO, or growth.</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -257,8 +256,8 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="border-l-4 border-purple-500 pl-6"
               >
-                <h4 className="text-xl font-bold mb-2">No-Code Speed</h4>
-                <p className="text-zinc-400">Leveraging Webflow and Shopify to ship enterprise solutions in weeks, not months.</p>
+                <h4 className="text-xl font-bold mb-2">Speed Without Compromise</h4>
+                <p className="text-zinc-600">By leveraging Webflow and Shopify, we ship production-ready websites in weeks — not months — without sacrificing quality.</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -267,20 +266,20 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="border-l-4 border-green-500 pl-6"
               >
-                <h4 className="text-xl font-bold mb-2">Built for Scale</h4>
-                <p className="text-zinc-400">pSEO systems that manage 10,000+ pages with minimal maintenance overhead.</p>
+                <h4 className="text-xl font-bold mb-2">Built to Scale</h4>
+                <p className="text-zinc-600">From programmatic SEO to high-performance architectures, we build systems that support 10,000+ pages with minimal overhead.</p>
               </motion.div>
             </div>
           </div>
-          <div className="bg-zinc-900/50 rounded-3xl border border-zinc-800 p-12 text-center">
+          <div className="bg-zinc-50 rounded-3xl border border-zinc-200 p-12 text-center">
             <div className="w-20 h-20 mx-auto mb-8 rounded-full bg-blue-500/20 flex items-center justify-center">
               <div className="w-10 h-10 bg-blue-500 rounded-full animate-pulse" />
             </div>
             <h3 className="text-2xl font-bold mb-4">Unified Execution</h3>
-            <p className="text-zinc-400 mb-8">Decoupled teams working in perfect harmony.</p>
+            <p className="text-zinc-600 mb-8">Design, development, and growth work as one system — no silos, no handoffs, no wasted time.</p>
             <Link href="#contact">
               <Button className="w-full font-bold group">
-                Talk to a Web Expert <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                Talk to an Expert <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
           </div>
@@ -289,11 +288,11 @@ export default function Home() {
 
       {/* 6. Proof of Work (Growth Charts) */}
       {/* 6. Performance Dashboard (Replaces Proof of Work) */}
-      <Section className="py-24 px-6 border-y border-zinc-900/50 bg-zinc-950/30">
+      <Section className="py-24 px-6 border-y border-zinc-200 bg-zinc-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Measurable Impact</h2>
-            <p className="text-zinc-400">The results we deliver for our partners.</p>
+            <p className="text-zinc-600">The results we deliver for our partners.</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
@@ -303,7 +302,7 @@ export default function Home() {
           </div>
 
           <div className="mt-16 text-center">
-            <Link href="/webflow" className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-white transition-colors group">
+            <Link href="/webflow" className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-zinc-500 hover:text-black transition-colors group">
               View Our Work <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -358,14 +357,14 @@ export default function Home() {
 
       {/* 8. Final CTA Section */}
       <Section className="py-24 px-6" id="contact">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-zinc-900 to-zinc-950 p-12 md:p-16 rounded-3xl border border-zinc-800">
+        <div className="max-w-5xl mx-auto bg-gradient-to-br from-zinc-100 to-white p-12 md:p-16 rounded-3xl border border-zinc-200 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-12">
               <div>
                 <h2 className="text-3xl md:text-5xl font-black italic tracking-tighter mb-8 uppercase leading-[0.9]">
                   Ready to Grow Your<br />Business?
                 </h2>
-                <p className="text-lg text-zinc-400 max-w-md leading-relaxed">
+                <p className="text-lg text-zinc-600 max-w-md leading-relaxed">
                   Book a free 30-minute strategy session. We&apos;ll review your current marketing, identify what&apos;s holding you back, and outline a clear path to more revenue.
                 </p>
               </div>
@@ -377,34 +376,34 @@ export default function Home() {
                   { title: "Implementation", desc: "Expert guidance on how to execute effectively." }
                 ].map((item, i) => (
                   <div key={i} className="flex gap-4">
-                    <div className="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center shrink-0">
-                      <div className="w-1 h-1 rounded-full bg-white" />
+                    <div className="w-8 h-8 rounded-lg bg-white border border-zinc-200 flex items-center justify-center shrink-0">
+                      <div className="w-1 h-1 rounded-full bg-black" />
                     </div>
                     <div>
-                      <h4 className="font-bold text-white text-sm">{item.title}</h4>
+                      <h4 className="font-bold text-black text-sm">{item.title}</h4>
                       <p className="text-xs text-zinc-500">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="bg-black/40 backdrop-blur-sm p-8 md:p-12 rounded-[40px] border border-zinc-800 shadow-2xl">
+            <div className="bg-white/80 backdrop-blur-sm p-8 md:p-12 rounded-[40px] border border-zinc-200 shadow-2xl">
               <LeadForm service="homepage" source="main" />
             </div>
           </div>
         </div>
       </Section>
 
-      <footer className="py-16 px-6 border-t border-zinc-900/50">
+      <footer className="py-16 px-6 border-t border-zinc-200">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="text-2xl font-bold">Agencey</div>
-            <div className="flex gap-8 text-sm text-zinc-400">
-              <Link href="/webflow" className="hover:text-white transition-colors">Webflow</Link>
-              <Link href="/wordpress" className="hover:text-white transition-colors">WordPress</Link>
-              <Link href="/shopify" className="hover:text-white transition-colors">Shopify</Link>
-              <Link href="/custom" className="hover:text-white transition-colors">Custom</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+            <div className="flex gap-8 text-sm text-zinc-500">
+              <Link href="/webflow" className="hover:text-black transition-colors">Webflow</Link>
+              <Link href="/wordpress" className="hover:text-black transition-colors">WordPress</Link>
+              <Link href="/shopify" className="hover:text-black transition-colors">Shopify</Link>
+              <Link href="/custom" className="hover:text-black transition-colors">Custom</Link>
+              <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
             </div>
           </div>
           <div className="mt-8 text-center text-sm text-zinc-500">

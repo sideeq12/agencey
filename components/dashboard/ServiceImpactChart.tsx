@@ -19,17 +19,17 @@ export function ServiceImpactChart() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="w-full bg-zinc-900/50 rounded-3xl border border-zinc-800 p-8 hover:border-orange-500/30 transition-colors"
+            className="w-full bg-white rounded-3xl border border-zinc-200 p-8 hover:border-orange-500/30 hover:shadow-lg transition-all"
         >
             <div className="mb-4">
-                <h3 className="text-2xl font-bold text-white mb-2">Platform Power</h3>
-                <p className="text-zinc-400 text-sm">Comparing Agencey Custom Stacks vs. Standard Themes</p>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-2">Platform Power</h3>
+                <p className="text-zinc-600 text-sm">Comparing Agencey Custom Stacks vs. Standard Themes</p>
             </div>
             <div className="h-[400px]">
                 <ResponsiveContainer width="100%" height="100%">
                     <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
-                        <PolarGrid stroke="#333" />
-                        <PolarAngleAxis dataKey="subject" tick={{ fill: '#e4e4e7', fontSize: 12 }} />
+                        <PolarGrid stroke="#e4e4e7" />
+                        <PolarAngleAxis dataKey="subject" tick={{ fill: '#27272a', fontSize: 12, fontWeight: 600 }} />
                         <PolarRadiusAxis angle={30} domain={[0, 150]} tick={false} axisLine={false} />
                         <Radar
                             name="Agencey Custom"
@@ -49,8 +49,8 @@ export function ServiceImpactChart() {
                         />
                         <Legend />
                         <Tooltip
-                            contentStyle={{ backgroundColor: '#18181b', borderColor: '#27272a', borderRadius: '12px' }}
-                            itemStyle={{ color: '#fff' }}
+                            contentStyle={{ backgroundColor: '#fff', borderColor: '#e4e4e7', borderRadius: '12px', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)', color: '#18181b' }}
+                            itemStyle={{ color: '#18181b' }}
                         />
                     </RadarChart>
                 </ResponsiveContainer>
