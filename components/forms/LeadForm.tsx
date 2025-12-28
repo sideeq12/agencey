@@ -16,17 +16,54 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
         e.preventDefault();
         setStatus('loading');
 
-        // Simulate API call
-        setTimeout(() => {
-            setStatus('success');
-        }, 1000);
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            company: formData.get('company'),
+            service: formData.get('service'),
+            goals: formData.get('goals'),
+            source,
+        };
+
+        try {
+            const response = await fetch('/api/lead', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+            } else {
+                throw new Error('Failed to submit form');
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            setStatus('error');
+        }
     };
 
     if (status === 'success') {
         return (
             <div className="p-8 text-center bg-black rounded-[40px] border border-zinc-800">
-                <h3 className="text-2xl font-black italic tracking-tighter mb-4 text-white uppercase">Sent.</h3>
-                <p className="text-zinc-400">Our unit will reach out to engineer your growth shortly.</p>
+                <h3 className="text-2xl font-black italic tracking-tighter mb-4 text-white uppercase">Message sent.</h3>
+                <p className="text-zinc-400"> We’ll get back to you within 24 hours.</p>
+            </div>
+        );
+    }
+
+    if (status === 'error') {
+        return (
+            <div className="p-8 text-center bg-red-50 border border-red-200 rounded-[40px]">
+                <h3 className="text-2xl font-black italic tracking-tighter mb-4 text-red-900 uppercase">Error.</h3>
+                <p className="text-red-700">Something went wrong. Please try again or contact us directly.</p>
+                <Button onClick={() => setStatus('idle')} className="mt-4">
+                    Try Again
+                </Button>
             </div>
         );
     }
@@ -124,7 +161,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
 
             <Button type="submit" disabled={status === 'loading'} className="h-16 text-lg font-bold group">
                 <span className="group-hover:translate-x-1 transition-transform inline-block">
-                    {status === 'loading' ? 'Engineering Session...' : ctaText}
+                    {status === 'loading' ? 'Sending message...' : ctaText}
                 </span>
             </Button>
             <p className="text-[10px] text-center text-zinc-600 font-bold uppercase tracking-widest">
