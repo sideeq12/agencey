@@ -357,8 +357,8 @@ export default function Home() {
 
       {/* 8. Final CTA Section */}
       <Section className="py-24 px-6" id="contact">
-        <div className="max-w-5xl mx-auto bg-gradient-to-br from-zinc-100 to-white p-12 md:p-16 rounded-3xl border border-zinc-200 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-5/6 mx-auto bg-gradient-to-br from-zinc-100 to-white p-12 md:p-16 rounded-3xl border border-zinc-200 shadow-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-center">
             <div className="space-y-12">
               <div>
                 <h2 className="text-3xl md:text-5xl font-black italic tracking-tighter mb-8 uppercase leading-[0.9]">

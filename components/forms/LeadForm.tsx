@@ -80,7 +80,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
                         id="name"
                         name="name"
                         placeholder="e.g., Dr. John Smith Jr."
-                        className="h-14 px-6 rounded-2xl border border-zinc-800 bg-zinc-950 text-white focus:outline-none focus:border-white transition-all text-sm"
+                        className="h-14 px-2 rounded-2xl border border-zinc-200 bg-white text-zinc-900 focus:outline-none focus:border-zinc-900 transition-all text-sm"
                     />
                 </div>
 
@@ -93,7 +93,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
                         id="email"
                         name="email"
                         placeholder="john@example.com"
-                        className="h-14 px-6 rounded-2xl border border-zinc-800 bg-zinc-950 text-white focus:outline-none focus:border-white transition-all text-sm"
+                        className="h-14 px-2 rounded-2xl border border-zinc-200 bg-white text-zinc-900 focus:outline-none focus:border-zinc-900 transition-all text-sm"
                     />
                 </div>
 
@@ -106,7 +106,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
                         id="phone"
                         name="phone"
                         placeholder="+1 (555) 000-0000"
-                        className="h-14 px-6 rounded-2xl border border-zinc-800 bg-zinc-950 text-white focus:outline-none focus:border-white transition-all text-sm"
+                        className="h-14 px-2 rounded-2xl border border-zinc-200 bg-white text-zinc-900 focus:outline-none focus:border-zinc-900 transition-all text-sm"
                     />
                 </div>
 
@@ -119,7 +119,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
                         id="company"
                         name="company"
                         placeholder="Your Organization"
-                        className="h-14 px-6 rounded-2xl border border-zinc-800 bg-zinc-950 text-white focus:outline-none focus:border-white transition-all text-sm"
+                        className="h-14 px-2 rounded-2xl border border-zinc-200 bg-white text-zinc-900 focus:outline-none focus:border-zinc-900 transition-all text-sm"
                     />
                 </div>
             </div>
@@ -131,7 +131,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
                     id="service"
                     name="service"
                     defaultValue={service}
-                    className="h-14 px-6 rounded-2xl border border-zinc-800 bg-zinc-950 text-white focus:outline-none focus:border-white transition-all text-sm appearance-none cursor-pointer"
+                    className="h-14 px-2 rounded-2xl border border-zinc-200 bg-white text-zinc-900 focus:outline-none focus:border-zinc-900 transition-all text-sm appearance-none cursor-pointer"
                 >
                     <option value="webflow">Webflow Development</option>
                     <option value="wordpress">WordPress Development</option>
@@ -155,7 +155,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ service, source, ctaText = '
                     name="goals"
                     rows={4}
                     placeholder="Describe what you want to achieve..."
-                    className="p-6 rounded-2xl border border-zinc-800 bg-zinc-950 text-white focus:outline-none focus:border-white transition-all text-sm resize-none"
+                    className="p-6 rounded-2xl border border-zinc-200 bg-white text-zinc-900 focus:outline-none focus:border-zinc-900 transition-all text-sm resize-none"
                 />
             </div>
 

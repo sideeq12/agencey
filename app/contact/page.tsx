@@ -101,7 +101,7 @@ export default function ContactPage() {
                             initial={{ opacity: 0, x: 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            className="bg-zinc-50 border border-zinc-200 p-8 md:p-16 rounded-[60px] shadow-2xl"
+                            className="bg-zinc-50 border border-zinc-200 p-4 md:p-6 rounded-[40px] shadow-2xl"
                         >
                             <h2 className="text-2xl font-black italic tracking-tighter mb-12 uppercase">Session Parameters</h2>
                             <LeadForm service="general" source="contact_page" />
