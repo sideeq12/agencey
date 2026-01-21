@@ -23,6 +23,40 @@ export async function generateStaticParams() {
     return params;
 }
 
+export async function generateMetadata({ params }: PageProps) {
+    const resolvedParams = await params;
+    const industry = industries.find((i) => i.slug === resolvedParams.industry);
+    const location = locations.find((l) => l.slug === resolvedParams.location);
+
+    if (!industry || !location) {
+        return {
+            title: "Service Not Found",
+        };
+    }
+
+    const title = `Website Design for ${industry.name} in ${location.name}`;
+    const description = `Helping ${industry.name.toLowerCase()} businesses in ${location.name} grow with high-converting, professional websites. Expert web design and marketing services.`;
+
+    return {
+        title,
+        description,
+        alternates: {
+            canonical: `/services/${industry.slug}/${location.slug}`
+        },
+        openGraph: {
+            title,
+            description,
+            url: `https://agencey.pro/services/${industry.slug}/${location.slug}`,
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+        },
+    };
+}
+
 export default async function ServiceLocationPage({ params }: PageProps) {
     const resolvedParams = await params;
     const industry = industries.find((i) => i.slug === resolvedParams.industry);

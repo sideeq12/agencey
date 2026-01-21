@@ -14,6 +14,36 @@ export async function generateStaticParams() {
     }));
 }
 
+export async function generateMetadata({ params }: PageProps) {
+    const resolvedParams = await params;
+    const page = pages.find((p) => p.slug === resolvedParams.slug);
+
+    if (!page) {
+        return {
+            title: "Page Not Found",
+        };
+    }
+
+    return {
+        title: page.title,
+        description: page.description,
+        alternates: {
+            canonical: `/webflow/${page.slug}`
+        },
+        openGraph: {
+            title: page.title,
+            description: page.description,
+            url: `https://agencey.pro/webflow/${page.slug}`,
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: page.title,
+            description: page.description,
+        },
+    };
+}
+
 export default async function WebflowPSeoPage({ params }: PageProps) {
     const resolvedParams = await params;
     const page = pages.find((p) => p.slug === resolvedParams.slug);

@@ -14,6 +14,36 @@ export async function generateStaticParams() {
     }));
 }
 
+export async function generateMetadata({ params }: PageProps) {
+    const resolvedParams = await params;
+    const page = pages.find((p) => p.slug === resolvedParams.slug);
+
+    if (!page) {
+        return {
+            title: "Page Not Found",
+        };
+    }
+
+    return {
+        title: page.title,
+        description: page.description,
+        alternates: {
+            canonical: `/shopify/${page.slug}`
+        },
+        openGraph: {
+            title: page.title,
+            description: page.description,
+            url: `https://agencey.pro/shopify/${page.slug}`,
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: page.title,
+            description: page.description,
+        },
+    };
+}
+
 export default async function ShopifyPSeoPage({ params }: PageProps) {
     const resolvedParams = await params;
     const page = pages.find((p) => p.slug === resolvedParams.slug);
