@@ -12,6 +12,7 @@ import { HeroBackground } from "@/components/ui/HeroBackground";
 import { Section } from "@/components/ui/Section";
 import { ServiceImpactChart } from "@/components/dashboard/ServiceImpactChart";
 import { MarketingFunnelChart } from "@/components/dashboard/MarketingFunnelChart";
+import { Footer } from "@/components/ui/Footer";
 
 export default function ShopifyHub() {
     return (
@@ -170,6 +171,7 @@ export default function ShopifyHub() {
                     </div>
                 </div>
             </Section>
+            <Footer />
         </div>
     );
 }

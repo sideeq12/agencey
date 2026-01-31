@@ -4,11 +4,13 @@ import { Button } from "@/components/ui/Button";
 import { HeroBackground } from "@/components/ui/HeroBackground";
 import { Accordion } from "@/components/ui/Accordion";
 import { Section } from "@/components/ui/Section";
+import { Footer } from "@/components/ui/Footer";
 import { ClientGrowthChart } from "@/components/dashboard/ClientGrowthChart";
 import { PerformanceComparisonChart } from "@/components/dashboard/PerformanceComparisonChart";
 import { ProjectTimelineChart } from "@/components/dashboard/ProjectTimelineChart";
 import { SeoProgressChart } from "@/components/dashboard/SeoProgressChart";
 import Link from "next/link";
+import Image from "next/image";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { useState } from "react";
 import { motion } from "framer-motion";
@@ -25,54 +27,36 @@ export function HomePageClient() {
   return (
     <div className="min-h-screen bg-white text-zinc-900">
       {/* 1. Hero Section */}
-      <header className="relative px-6 pt-32 pb-24 min-h-[80vh] flex items-center justify-center overflow-hidden">
+      <header className="relative px-6 pt-32 pb-32 min-h-[90vh] flex items-center justify-center overflow-hidden">
         <HeroBackground />
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-6xl mx-auto text-center relative z-10"
         >
-          <div className="inline-block px-4 py-2 mb-8 rounded-full bg-zinc-100 border border-zinc-200 text-xs font-semibold uppercase tracking-wider text-zinc-600">
+          <div className="inline-block px-4 py-2 mb-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-bold uppercase tracking-[0.2em] text-white/80">
             Strategic Growth Unit
           </div>
-          <h1 className="text-4xl md:text-5xl font-black italic tracking-tighter mb-8 leading-[0.9] uppercase">
-            Websites & Marketing Systems<br />That Bring You Qualified Leads.
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] mb-10 leading-[1.05] text-white drop-shadow-2xl">
+            Digital systems built<br />for <span className="text-white/70">measurable scale.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-zinc-600 max-w-4xl mx-auto mb-12 font-medium leading-relaxed">
-            We design, build, and optimize websites and digital systems that turn traffic into real business opportunities — not just clicks.
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-16 font-medium leading-relaxed drop-shadow-lg">
+            We architect and optimize high-performance digital ecosystems that transform market demand into predictable revenue growth.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <Link href="#contact">
-              <Button size="lg" className="h-16 px-10 text-lg font-bold mb-20 group">
-                <span className="group-hover:translate-x-1 transition-transform inline-block">Get a Free Strategy Session</span>
+              <Button size="lg" className="h-16 px-12 text-base font-bold rounded-full bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 shadow-2xl group">
+                <span className="group-hover:translate-x-1 transition-transform inline-block">Consult Our Strategists</span>
               </Button>
             </Link>
-            <Link href="#growth" className="text-zinc-500 hover:text-black font-bold uppercase tracking-widest text-xs transition-colors">
-              See How It Works
+            <Link href="#growth" className="text-white/70 hover:text-white font-bold uppercase tracking-[0.2em] text-[10px] transition-all duration-300 border-b border-transparent hover:border-white/40 pb-1">
+              The Protocol
             </Link>
           </div>
         </motion.div>
       </header>
 
-      {/* 2. Trust Bar */}
-      <Section className="py-16 border-y border-zinc-100">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-center mb-10 text-zinc-500">Trusted by Leading Companies</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-40">
-            <div className="text-xl font-bold">TECHNO</div>
-            <div className="text-xl font-bold">SYNERGY</div>
-            <div className="text-xl font-bold">NEXUS</div>
-            <div className="text-xl font-bold">VORTEX</div>
-            <div className="text-xl font-bold">QUANTUM</div>
-          </div>
-          <div className="mt-10 text-center">
-            <Link href="#contact" className="text-sm font-semibold text-zinc-500 hover:text-black transition-colors border-b border-transparent hover:border-black pb-0.5">
-              See Why Clients Trust Us
-            </Link>
-          </div>
-        </div>
-      </Section>
 
       {/* 3. Services Grid */}
       <Section className="py-24 px-6">
@@ -394,23 +378,7 @@ export function HomePageClient() {
         </div>
       </Section>
 
-      <footer className="py-16 px-6 border-t border-zinc-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-2xl font-bold">Agencey</div>
-            <div className="flex gap-8 text-sm text-zinc-500">
-              <Link href="/webflow" className="hover:text-black transition-colors">Webflow</Link>
-              <Link href="/wordpress" className="hover:text-black transition-colors">WordPress</Link>
-              <Link href="/shopify" className="hover:text-black transition-colors">Shopify</Link>
-              <Link href="/custom" className="hover:text-black transition-colors">Custom</Link>
-              <Link href="/contact" className="hover:text-black transition-colors">Contact</Link>
-            </div>
-          </div>
-          <div className="mt-8 text-center text-sm text-zinc-500">
-            © 2025 Agencey. All Rights Reserved.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

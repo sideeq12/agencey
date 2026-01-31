@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiMail, FiPhone, FiMapPin, FiArrowLeft } from "react-icons/fi";
 import { HeroBackground } from "@/components/ui/HeroBackground";
+import { Footer } from "@/components/ui/Footer";
 
 export function ContactPageClient() {
     return (
@@ -110,9 +111,7 @@ export function ContactPageClient() {
                 </div>
             </section>
 
-            <footer className="py-20 px-6 border-t border-zinc-200 flex justify-center text-zinc-500">
-                <p className="text-[10px] font-bold uppercase tracking-[0.5em]">AGENCEY / 2025 / STRATEGY UNIT</p>
-            </footer>
+            <Footer />
         </div>
     );
 }

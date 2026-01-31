@@ -2,9 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from "next/link";
+import Image from 'next/image';
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { FiCode, FiLayout, FiShoppingCart, FiZap, FiChevronDown, FiTrendingUp, FiShare2, FiEdit3 } from "react-icons/fi";
+import { FiCode, FiLayout, FiShoppingCart, FiZap, FiChevronDown, FiTrendingUp, FiShare2 } from "react-icons/fi";
 
 export const Navbar = () => {
     const [isDevOpen, setIsDevOpen] = useState(false);
@@ -23,9 +24,17 @@ export const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-200/50">
+        <nav className="fixed top-0 w-full z-50 bg-white border-b border-zinc-200/50">
             <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-                <Link href="/" className="text-2xl font-bold text-black">Agencey</Link>
+                <Link href="/" className="relative h-10 w-32">
+                    <Image
+                        src="/whitebg.png"
+                        alt="Agencey Logo"
+                        fill
+                        className="object-contain"
+                        priority
+                    />
+                </Link>
                 <div className="hidden lg:flex gap-8 text-xs font-bold uppercase tracking-widest items-center">
                     <Link href="/services" className="text-zinc-600 hover:text-zinc-900 transition-colors">Services</Link>
 
