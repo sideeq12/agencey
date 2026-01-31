@@ -31,7 +31,13 @@ export const locations = [
 
 export const services = [
   { id: 'seo', name: 'SEO', slug: 'seo', title: 'SEO Services', action: 'Dominate Search Rankings' },
-  { id: 'google-ads', name: 'Google Ads', slug: 'google-ads', title: 'Google Ads Management', action: 'Get Instant Leads' },
   { id: 'website-design', name: 'Website Design', slug: 'website-design', title: 'Website Design', action: 'Convert More Visitors' },
+];
+
+export const platforms = [
+  { id: 'webflow', name: 'Webflow', slug: 'webflow' },
+  { id: 'shopify', name: 'Shopify', slug: 'shopify' },
+  { id: 'wordpress', name: 'WordPress', slug: 'wordpress' },
+  { id: 'custom', name: 'Custom Development', slug: 'custom' },
 ];
 

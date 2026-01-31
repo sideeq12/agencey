@@ -8,9 +8,9 @@ import Link from 'next/link';
 import { FiCheck, FiArrowRight, FiTrendingUp, FiTarget, FiLayout } from 'react-icons/fi';
 
 interface PseoTemplateProps {
-    service: { id: string; name: string; title: string, action: string };
-    industry: { id: string; name: string; singular: string };
-    city: { id: string; name: string };
+    service: { id: string; name: string; title: string, action: string, slug: string };
+    industry: { id: string; name: string; singular: string, slug: string };
+    city: { id: string; name: string, slug: string };
 }
 
 export const PseoTemplate: React.FC<PseoTemplateProps> = ({ service, industry, city }) => {

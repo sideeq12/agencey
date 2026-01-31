@@ -3,13 +3,15 @@ import Image from 'next/image';
 
 interface HeroBackgroundProps {
     backgroundImage?: string;
+    className?: string;
 }
 
 export const HeroBackground: React.FC<HeroBackgroundProps> = ({
-    backgroundImage = '/team.jpg'
+    backgroundImage = '/team.jpg',
+    className
 }) => {
     return (
-        <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className={`absolute inset-0 z-0 overflow-hidden ${className || ''}`}>
             {/* Background Image */}
             <Image
                 src={backgroundImage}
