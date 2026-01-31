@@ -18,10 +18,10 @@ import { FiCode, FiLayout, FiShoppingCart, FiZap, FiChevronDown, FiArrowRight, F
 
 export function HomePageClient() {
   const services = [
-    { title: "Webflow", href: "/webflow", color: "from-blue-500/10 to-blue-500/5", icon: FiLayout, desc: "Pixel-perfect visual engineering" },
-    { title: "WordPress", href: "/wordpress", color: "from-purple-500/10 to-purple-500/5", icon: FiCode, desc: "Enterprise CMS orchestration" },
-    { title: "Shopify", href: "/shopify", color: "from-green-500/10 to-green-500/5", icon: FiShoppingCart, desc: "High-conversion commerce" },
-    { title: "Custom", href: "/custom", color: "from-orange-500/10 to-orange-500/5", icon: FiZap, desc: "Bespoke full-stack verticality" },
+    { title: "Web Design", href: "/webflow", color: "from-blue-500/10 to-blue-500/5", icon: FiLayout, desc: "High-performance sites for local businesses & global brands." },
+    { title: "Meta & PPC Ads", href: "/social-media", color: "from-purple-500/10 to-purple-500/5", icon: FiTarget, desc: "Paid acquisition systems that turn traffic into revenue." },
+    { title: "SEO Dominance", href: "/seo", color: "from-green-500/10 to-green-500/5", icon: FiTrendingUp, desc: "Dominate search rankings and capture high-intent demand." },
+    { title: "AI Automation", href: "/custom", color: "from-orange-500/10 to-orange-500/5", icon: FiZap, desc: "Bespoke AI workflows to scale your internal operations." },
   ];
 
   return (
@@ -39,14 +39,14 @@ export function HomePageClient() {
             Strategic Growth Unit
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] mb-10 leading-[1.05] text-white drop-shadow-2xl">
-            Digital systems built<br />for <span className="text-white/70">measurable scale.</span>
+            High-Performance Websites &<br /> <span className="text-white/70">Marketing Systems that Scale.</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-16 font-medium leading-relaxed drop-shadow-lg">
-            We architect and optimize high-performance digital ecosystems that transform market demand into predictable revenue growth.
+            We build websites for local businesses and global brands, manage Meta Ads that convert, dominate SEO, and implement AI automation to scale your growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
             <Link href="#contact">
-              <Button size="lg" className="h-16 px-12 text-base font-bold rounded-full bg-white text-zinc-900 hover:bg-zinc-100 transition-all duration-300 shadow-2xl group">
+              <Button size="lg" className="h-16 px-12 text-base font-bold rounded-full shadow-2xl group">
                 <span className="group-hover:translate-x-1 transition-transform inline-block">Consult Our Strategists</span>
               </Button>
             </Link>
@@ -94,10 +94,10 @@ export function HomePageClient() {
           <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center">The Protocol</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
-              { step: "01", title: "Data Harvesting", desc: "We identify high-intent keyword clusters and capture demand before competitors." },
-              { step: "02", title: "Visual Synthesis", desc: "Our design units create unique, localized layouts for every keyword entity." },
-              { step: "03", title: "Mass Deployment", desc: "Automated generation of 1000+ optimized landing pages with zero CLS." },
-              { step: "04", title: "Conversion Loop", desc: "Continuous mapping of user behavior to refine CTR and lead quality." }
+              { step: "01", title: "Strategy & Audit", desc: "We analyze your market, competitors, and current assets to build a roadmap for measurable growth." },
+              { step: "02", title: "High-Fidelity Design", desc: "Our design units craft professional, high-converting layouts tailored to your brand and local customers." },
+              { step: "03", title: "System Deployment", desc: "We launch your website, Meta Ads, and SEO systems with a focus on speed and conversion integrity." },
+              { step: "04", title: "AI-Driven Scaling", desc: "We implement AI automation and continuous testing to lower your acquisition costs and scale revenue." }
             ].map((s, i) => (
               <div key={i} className="flex gap-6">
                 <span className="text-4xl font-bold text-zinc-200">{s.step}</span>
@@ -119,7 +119,7 @@ export function HomePageClient() {
 
           <div className="mt-16 text-center">
             <Link href="#contact">
-              <Button variant="outline" size="lg" className="border-zinc-300 hover:bg-zinc-100 group">
+              <Button variant="outline" size="lg" className="group">
                 Start Your Project <FiArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
@@ -142,44 +142,44 @@ export function HomePageClient() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "Facebook & Google Ads",
-                desc: "High-converting ad campaigns with advanced targeting and optimization.",
-                items: ["Campaign Setup", "Audience Targeting", "A/B Testing", "ROI Tracking"],
-                icon: FiTarget,
+                title: "Local Business Sites",
+                desc: "High-performance websites tailored for local businesses to drive foot traffic and online leads.",
+                items: ["Professional Design", "Mobile Optimization", "Local SEO Setup", "Lead Capture"],
+                icon: FiLayout,
                 color: "blue"
               },
               {
-                title: "SEO Domination",
-                desc: "Programmatic SEO with 1000+ pages for complete market coverage.",
-                items: ["1000+ Pages", "Local SEO", "Technical SEO", "Content Automation"],
-                icon: FiTrendingUp,
+                title: "Meta & Google Ads",
+                desc: "Strategic ad campaigns across Facebook, Instagram, and Google to capture immediate demand.",
+                items: ["Lead Generation", "Retargeting", "Ad Creative", "ROAS Optimization"],
+                icon: FiTarget,
                 color: "green"
               },
               {
-                title: "Marketing Automation",
-                desc: "Complete CRM and email automation to nurture leads into customers.",
-                items: ["CRM Setup", "Email Sequences", "SMS Marketing", "Lead Scoring"],
-                icon: FiSettings,
+                title: "SEO Authority",
+                desc: "Long-term organic growth systems to dominate search results and build authority.",
+                items: ["Keyword Research", "On-Page SEO", "Backlink Strategy", "Technical Audit"],
+                icon: FiTrendingUp,
                 color: "purple"
               },
               {
-                title: "AI Content Creation",
-                desc: "90-day AI-powered content strategy with SEO optimization.",
-                items: ["AI Content", "SEO Optimization", "Social Strategy", "Content Calendar"],
+                title: "AI Automation",
+                desc: "Bespoke AI workflows that automate your business processes and customer engagement.",
+                items: ["AI Chatbots", "Workflow Sync", "Automated Follow-ups", "Process Optimization"],
                 icon: FiZap,
                 color: "orange"
               },
               {
-                title: "Conversion Optimization",
-                desc: "Landing page optimization and funnel improvements for maximum ROI.",
-                items: ["Landing Pages", "A/B Testing", "Funnel Analysis", "CRO Strategy"],
-                icon: FiLayout,
+                title: "Conversion Funnels",
+                desc: "End-to-end sales systems designed to guide users from discovery to final purchase.",
+                items: ["Funnel Design", "A/B Testing", "Email Automation", "Sales Integration"],
+                icon: FiSettings,
                 color: "rose"
               },
               {
-                title: "Analytics & Reporting",
-                desc: "Comprehensive tracking and reporting for all marketing activities.",
-                items: ["Custom Dashboards", "ROI Tracking", "Performance Reports", "Data Analysis"],
+                title: "Performance Data",
+                desc: "Real-time analytics and reporting to track your ROI across all marketing channels.",
+                items: ["Custom Dashboards", "Conversion Tracking", "Monthly Reports", "Strategy Scaling"],
                 icon: FiBarChart2,
                 color: "zinc"
               }
@@ -230,8 +230,8 @@ export function HomePageClient() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="border-l-4 border-blue-500 pl-6"
               >
-                <h4 className="text-xl font-bold mb-2">Radical Focus</h4>
-                <p className="text-zinc-600">We don&apos;t do generalists. Every project is handled by specialists who live and breathe their craft — design, development, SEO, or growth.</p>
+                <h4 className="text-xl font-bold mb-2">Specialist Execution</h4>
+                <p className="text-zinc-600">We don&apos;t use generalists. Your project is managed by experts specialized in design, Meta Ads, SEO, and AI automation.</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -240,8 +240,8 @@ export function HomePageClient() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="border-l-4 border-purple-500 pl-6"
               >
-                <h4 className="text-xl font-bold mb-2">Speed Without Compromise</h4>
-                <p className="text-zinc-600">By leveraging Webflow and Shopify, we ship production-ready websites in weeks — not months — without sacrificing quality.</p>
+                <h4 className="text-xl font-bold mb-2">Rapid Deployment</h4>
+                <p className="text-zinc-600">We ship professional, production-ready marketing systems in weeks — not months — allowing you to start generating ROI immediately.</p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -250,8 +250,8 @@ export function HomePageClient() {
                 transition={{ duration: 0.5, delay: 0.6 }}
                 className="border-l-4 border-green-500 pl-6"
               >
-                <h4 className="text-xl font-bold mb-2">Built to Scale</h4>
-                <p className="text-zinc-600">From programmatic SEO to high-performance architectures, we build systems that support 10,000+ pages with minimal overhead.</p>
+                <h4 className="text-xl font-bold mb-2">Revenue Architecture</h4>
+                <p className="text-zinc-600">Our systems are built with one goal: conversion. Every pixel and line of code is optimized to turn visitors into paying customers.</p>
               </motion.div>
             </div>
           </div>
@@ -301,31 +301,31 @@ export function HomePageClient() {
             <Accordion items={[
               {
                 question: "What do you actually do?",
-                answer: "We design and build high-converting websites and marketing systems—Webflow, WordPress, Shopify, and custom builds—focused on traffic, leads, and sales, not just looks."
+                answer: "We build professional websites for local businesses and global brands, manage Meta & Google Ads, dominate search rankings with SEO, and implement AI automation to streamline your growth."
               },
               {
                 question: "Who is this for?",
-                answer: "Startups, agencies, and growing businesses that need a website or marketing system that actually drives revenue—not a pretty brochure."
+                answer: "Local businesses, startups, and established companies that need more than just a pretty website—they need a high-performance marketing system that drives automated revenue."
               },
               {
                 question: "How are you different from other agencies?",
-                answer: "We don’t just “design.” We combine UX, performance, SEO, and conversion strategy so your website works as a growth engine from day one."
+                answer: "We don't just 'design.' We integrate AI automation and multi-channel marketing (Ads + SEO) directly into your technical architecture so your business grows while you sleep."
               },
               {
-                question: "How long does a typical project take?",
-                answer: "Most websites launch in 2–4 weeks, depending on scope. We move fast without cutting corners."
+                question: "Do you work with local businesses?",
+                answer: "Absolutely. We specialize in helping local businesses dominate their area through localized SEO and targeted Meta Ads, paired with high-converting websites."
               },
               {
-                question: "Do you help after the site is live?",
-                answer: "Yes. We offer ongoing optimization, SEO, ads, and support to keep your site improving—not stagnating."
+                question: "What is 'AI Automation' for my business?",
+                answer: "We build custom AI workflows that handle lead nurturing, customer support, and administrative tasks, allowing you to focus on high-level strategy while your systems handle the busy work."
               },
               {
-                question: "Can you work with my existing website?",
-                answer: "Absolutely. We can redesign, optimize, or rebuild your current site to improve speed, SEO, and conversions."
+                question: "How long until I see results from Ads and SEO?",
+                answer: "Meta Ads usually drive traffic and leads within the first week of launch. SEO is a longer-term play that builds powerful organic authority over 3–6 months."
               },
               {
                 question: "How much does it cost?",
-                answer: "Pricing depends on scope. We offer transparent quotes after a short strategy call—no hidden fees, no surprises."
+                answer: "Pricing is based on your specific growth goals. We offer transparent, ROIs-focused packages for local businesses through to enterprise-level automation systems."
               }
             ]} />
             <div className="flex justify-center mt-12">
