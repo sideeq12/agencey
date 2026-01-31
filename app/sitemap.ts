@@ -6,6 +6,8 @@ import wordpressPages from '@/data/wordpress/pages.json';
 import shopifyPages from '@/data/shopify/pages.json';
 import customPages from '@/data/custom/pages.json';
 
+import { industries, locations, services } from '@/data/pseo';
+
 const BASE_URL = 'https://agencey.pro'; // Replace with actual domain
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -51,11 +53,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority: 0.6,
     }));
 
+    const pseoSitemap: MetadataRoute.Sitemap = [];
+    services.forEach(service => {
+        industries.forEach(industry => {
+            locations.forEach(location => {
+                pseoSitemap.push({
+                    url: `${BASE_URL}/local/${service.slug}/${industry.slug}/${location.slug}`,
+                    lastModified: new Date(),
+                    changeFrequency: 'monthly' as const,
+                    priority: 0.7,
+                });
+            });
+        });
+    });
+
     return [
         ...staticRoutes,
         ...webflowSitemap,
         ...wordpressSitemap,
         ...shopifySitemap,
         ...customSitemap,
+        ...pseoSitemap,
     ];
 }
