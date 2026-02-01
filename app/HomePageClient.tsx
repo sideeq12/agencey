@@ -39,7 +39,7 @@ export function HomePageClient() {
             Strategic Growth Unit
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-[-0.04em] mb-10 leading-[1.05] text-white drop-shadow-2xl">
-            High-Performance Websites &<br /> <span className="text-white/70">Marketing Systems that Scale.</span>
+            Websites & Marketing<br /> <span className="text-white/70">That Scale.</span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-16 font-medium leading-relaxed drop-shadow-lg">
             We build websites for local businesses and global brands, manage Meta Ads that convert, dominate SEO, and implement AI automation to scale your growth.
