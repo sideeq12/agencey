@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const BASE_URL = process.env.BASE_URL || 'https://agencey.pro';
-const outPath = path.join(process.cwd(), 'out', 'sitemap.xml');
+const outPath = path.join(process.cwd(), 'public', 'sitemap.xml');
 
 function readJson(rel) {
   const p = path.join(process.cwd(), rel);
