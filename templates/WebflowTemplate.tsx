@@ -12,6 +12,7 @@ import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
 import { HeroBackground } from '@/components/ui/HeroBackground';
 import { Section } from '@/components/ui/Section';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 interface WebflowTemplateProps {
     data: {
@@ -37,15 +38,25 @@ export const WebflowTemplate: React.FC<WebflowTemplateProps> = ({ data }) => {
         "serviceType": "Webflow Development"
     };
 
+    const breadcrumbs = [
+        { label: 'Webflow', href: '/webflow' },
+        { label: data.title }
+    ];
+
     return (
         <div className="min-h-screen bg-white text-zinc-900 selection:bg-zinc-200 selection:text-black">
             <SeoHead title={data.title} description={data.description} />
             <JsonLd data={schema} />
 
-            {/* Hero Section */}
+            {/* Breadcrumbs */}
+            <div className="fixed top-20 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-zinc-200">
+                <div className="max-w-7xl mx-auto px-6 py-3">
+                    <Breadcrumbs items={breadcrumbs} />
+                </div>
+            </div>
 
             {/* Hero Section */}
-            <header className="relative pt-48 pb-24 px-6 overflow-hidden">
+            <header className="relative pt-56 pb-24 px-6 overflow-hidden">
                 <HeroBackground backgroundImage="/team2.jpg" />
                 <div className="max-w-5xl mx-auto text-center relative z-10">
                     <motion.div

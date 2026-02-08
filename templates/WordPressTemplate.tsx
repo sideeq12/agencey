@@ -12,6 +12,7 @@ import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { Accordion } from '@/components/ui/Accordion';
 import { HeroBackground } from '@/components/ui/HeroBackground';
 import { Section } from '@/components/ui/Section';
+import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 
 interface WordPressTemplateProps {
     data: {
@@ -37,12 +38,24 @@ export const WordPressTemplate: React.FC<WordPressTemplateProps> = ({ data }) =>
         "serviceType": "WordPress Development"
     };
 
+    const breadcrumbs = [
+        { label: 'WordPress', href: '/wordpress' },
+        { label: data.title }
+    ];
+
     return (
         <div className="min-h-screen bg-white text-zinc-900">
             <SeoHead title={data.title} description={data.description} />
             <JsonLd data={schema} />
 
-            <header className="pt-20 pb-12 px-6 relative overflow-hidden">
+            {/* Breadcrumbs */}
+            <div className="fixed top-20 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-b border-zinc-200">
+                <div className="max-w-7xl mx-auto px-6 py-3">
+                    <Breadcrumbs items={breadcrumbs} />
+                </div>
+            </div>
+
+            <header className="pt-32 pb-12 px-6 relative overflow-hidden">
                 <HeroBackground backgroundImage="/team3.jpg" />
                 <div className="max-w-5xl mx-auto bg-white rounded-[40px] p-12 md:p-20 shadow-xl border border-zinc-200 relative z-10">
                     <div className="flex flex-col md:flex-row items-center gap-12">
