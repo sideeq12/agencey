@@ -17,6 +17,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/wordpress',
         '/shopify',
         '/custom',
+        '/seo',
+        '/services',
         '/contact',
     ].map((route) => ({
         url: `${BASE_URL}${route}`,
